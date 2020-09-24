@@ -20,7 +20,8 @@ Route::get('/', function () {
 Auth::routes();
 
 // Route::get('/e/create', 'EventsController@create');
-Route::get('/e/create', 'App\Http\Controllers\EventsController@create');
+Route::get('/e/edit/{event}', 'App\Http\Controllers\EventsController@edit');
+Route::get('/e/update/{event}', 'App\Http\Controllers\EventsController@update');
 
 Auth::routes();
 
