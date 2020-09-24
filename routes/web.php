@@ -13,10 +13,6 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
-
-Route::get('/insert_event', function () {
-    return view('insert_event');
-});
+Route::get('/', 'App\Http\Controllers\EventController@home');
+Route::get('/insert_event', 'App\Http\Controllers\EventController@insert');
+Route::post('/insert_event', 'App\Http\Controllers\EventController@store');

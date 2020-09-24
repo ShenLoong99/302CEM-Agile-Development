@@ -1,11 +1,11 @@
-
-
 <!doctype html>
 <html class="no-js" lang="zxx">
+
 <head>
     <title>Insert New Event</title>
     @extends('layouts.head')
 </head>
+
 <body>
     <!-- ? Preloader Start -->
     <div id="preloader-active">
@@ -18,7 +18,6 @@
             </div>
         </div>
     </div>
-    <!-- Preloader Start -->
     <header>
         <!--? Header Start -->
         <div class="header-area">
@@ -76,6 +75,7 @@
                         <div class="col-xl-12">
                             <div class="hero-cap hero-cap2 text-center">
                                 <h2>Insert New Event</h2>
+                                <p class="msg text-success h3">{{ session('msg') }}</p>
                             </div>
                         </div>
                     </div>
@@ -83,160 +83,60 @@
             </div>
         </div>
         <!-- Hero End -->
-        <form name="insert_form" method="post">
-            <section class="about-low-area section-padding2">
-                <div class="container">
-                    <div class="row">
-                        <div class="col-lg-6 col-md-12">
-                            <div class="about-caption mb-50">
-                                <!-- Section Tittle -->
-                                <div class="section-tittle mb-35">
-                                    <h2>Event Name: </h2>
-                                    <input type="text" name="name" placeholder="Event Name" title="Enter event name" class="form-control" automcomplete="off" required />
-                                </div>
-                                <p class="mb-0 pb-0">Description of the event:</p>
-                                <textarea name="desc" class="form-control" placeholder="Description of the event" title="Enter description of the event" rows="4" cols="50"></textarea>
-                            </div>
-                            <div class="row">
-                                <div class="col-lg-6 col-md-6 col-sm-6 col-xs-10">
-                                    <div class="single-caption mb-20">
-                                        <div class="caption-icon">
-                                            <span class="flaticon-communications-1"></span>
-                                        </div>
-                                        <div class="caption">
-                                            <h5>Where: </h5>
-                                            <input type="text" name="venue" placeholder="Event Location/Venue" title="Enter event location/venue" class="form-control" automcomplete="off" required />
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="col-lg-6 col-md-6 col-sm-6 col-xs-10">
-                                    <div class="single-caption mb-20">
-                                        <div class="caption-icon">
-                                            <span class="flaticon-education"></span>
-                                        </div>
-                                        <div class="caption">
-                                            <h5>When</h5>
-                                            <input type="datetime-local" title="Event Start Date & Time" name="time" class="form-control" style="width: 215px" required />
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                            <button name="submit" type="submit" class="btn mt-50">Insert New Event!</button>
-                        </div>
-                        <div class="col-lg-6 col-md-12">
-                            <!-- about-img -->
-                            <div class="about-img">
-                                <div class="about-font-img d-none d-lg-block">
-                                    <h4>Sub Event Image: </h4>
-                                    <input type="text" name="sub-img" placeholder="Enter image URL" title="Make sure your image URL is valid (social media image URL is not advisable to be inserted)" class="form-control" autocomplete="off" />
-                                </div><br>
-                                <div class="about-back-img ">
-                                    <h4>Main Event Image: </h4>
-                                    <input type="text" name="main-img" placeholder="Enter image URL" title="Make sure your image URL is valid (social media image URL is not advisable to be inserted)" class="form-control" autocomplete="off" required />
-                                </div>
-                            </div>
-                        </div>
+        <div class="m-5 p-5">
+            <form name="insert_form" action="/insert_event" method="post">
+                @csrf 
+                <!-- ^^ - this above allows to cross over to another page when redirect -->
+                <div>
+                    <p>Event Name: </p>
+                    <input type="text" name="name" maxlength="255" placeholder="Event Name" title="Enter event name" class="form-control" automcomplete="off" required />
+                </div>
+                <div>
+                    <p>Event Description: </p>
+                    <textarea name="desc" class="form-control" maxlength="255" placeholder="Description of the event" title="Enter description of the event" rows="4" cols="50"></textarea>
+                </div>
+                <div class="row">
+                    <div class="col-6">
+                        <p>Category: </p>
+                        <select name="cat" class="form-control" required>
+                            <option value="" selected disabled>Choose a category</option>
+                            <option value="1">Music</option>
+                            <option value="2">Sports</option>
+                            <option value="3">Games (Fun)</option>
+                            <option value="4">Product Fair</option>
+                        </select>
+                    </div><br><br>
+                    <div class="col-6">
+                        <p>Event Location: </p>
+                        <input type="text" name="venue" placeholder="Event Location/Venue" title="Enter event location/venue" class="form-control" automcomplete="off" required />
                     </div>
                 </div>
-            </section>
-            <!-- About Law End-->
-            <!-- accordion End -->
-            <!--? gallery Products Start -->
-            <div class="gallery-area fix">
-                <div class="container-fluid px-5">
-                    <h3>Input Gallery Images (Max 6)</h3>
-                    <div class="no-gutters">
-                        <h4><small>At least 1 gallery image is needed to display for each event</small></h4>
-                        <div class="col-lg-6 col-md-6 col-sm-6">
-                            <div class="gallery-box">
-                                <div>
-                                    <h4>Gallery Image 1</h4>
-                                    <input type="text" name="img-gal-1" class="form-control" placeholder="Enter image URL" title="Make sure your image URL is valid (social media image URL is not advisable to be inserted)" autocomplete="off" required />
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-lg-6 col-md-6 col-sm-6">
-                            <div class="gallery-box">
-                                <div>
-                                    <h4>Gallery Image 2</h4>
-                                    <input type="text" name="img-gal-2" class="form-control" placeholder="Enter image URL" title="Make sure your image URL is valid (social media image URL is not advisable to be inserted)" autocomplete="off" />
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-lg-6 col-md-6 col-sm-6">
-                            <div class="gallery-box">
-                                <div>
-                                    <h4>Gallery Image 3</h4>
-                                    <input type="text" name="img-gal-3" class="form-control" placeholder="Enter image URL" title="Make sure your image URL is valid (social media image URL is not advisable to be inserted)" autocomplete="off" />
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-lg-6 col-md-6 col-sm-6">
-                            <div class="gallery-box">
-                                <div>
-                                    <h4>Gallery Image 4</h4>
-                                    <input type="text" name="img-gal-4" class="form-control" placeholder="Enter image URL" title="Make sure your image URL is valid (social media image URL is not advisable to be inserted)" autocomplete="off" />
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-lg-6 col-md-6 col-sm-6">
-                            <div class="gallery-box">
-                                <div>
-                                    <h4>Gallery Image 5</h4>
-                                    <input type="text" name="img-gal-5" class="form-control" placeholder="Enter image URL" title="Make sure your image URL is valid (social media image URL is not advisable to be inserted)" autocomplete="off" />
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-lg-6 col-md-6 col-sm-6">
-                            <div class="gallery-box">
-                                <div>
-                                    <h4>Gallery Image 6</h4>
-                                    <input type="text" name="img-gal-6" class="form-control" placeholder="Enter image URL" title="Make sure your image URL is valid (social media image URL is not advisable to be inserted)" autocomplete="off" />
-                                </div>
-                            </div>
-                        </div>
+                
+                <div class="row">
+                    <div class="col-6">
+                        <p>Event Start Date & Time: </p>
+                        <input type="datetime-local" title="Event Start Date & Time" name="start" class="form-control" style="width: 250px" required />
+                    </div>
+                    <div class="col-6">
+                        <p>Event End Date & Time: </p>
+                        <input type="datetime-local" title="Event End Date & Time" name="end" class="form-control" style="width: 250px" required />
                     </div>
                 </div>
-            </div>
-            <!-- gallery Products End -->
-            <!--? Pricing Card Start -->
-            <section class="pricing-card-area section-padding2">
-                <div class="container">
-                    <!-- Section Tittle -->
-                    <div class="row justify-content-center">
-                        <div class="col-lg-5 col-md-8">
-                            <div class="section-tittle text-center mb-100">
-                                <h2>Event Pricing</h2>
-                                <p>Check out our event price. It's so cheap you wouldn't believe it!</p>
-                            </div>
-                        </div>
+                <div class="row">
+                    <div class="col-6">
+                        <p>Max Participant: </p>
+                        <input type="number" style="width: 200px" placeholder="Set Max Participants" title="Enter maximum participants" name="max" class="form-control" min="40" max="3000" required />
                     </div>
-                    <center>
-                        <div class="col-xl-4 col-lg-4 col-md-6 col-sm-10">
-                            <div class="single-card active text-center mb-30">
-                                <div class="card-top">
-                                    <input type="text" name="price" class="form-control mb-3" placeholder="Event Price (RM)" pattern="[0-9]+(\\.[0-9][0-9]?)?" autocomplete="off" required />
-                                </div>
-                                <div class="card-bottom">
-                                    <ul>
-                                        <li>Increase traffic 50%</li>
-                                        <li>E-mail support</li>
-                                        <li>10 Free Optimization</li>
-                                        <li>24/7 support</li>
-                                    </ul>
-                                    <a href="#" class="black-btn">Purchase Ticket</a>
-                                </div>
-                            </div>
-                        </div>
-                    </center>
+                    <div class="col-6">
+                        <p>Event Pricing</p>
+                        <input type="text" name="price" class="form-control" placeholder="Event Price (RM)" pattern="[0-9]+(\\.[0-9][0-9]?)?" autocomplete="off" required />
+                    </div>
                 </div>
-            </section>
-        </form>
-        <!-- Pricing Card End -->
+                <button name="submit" type="submit" class="btn mt-50">Insert New Event!</button>
+            </form>
+        </div>
     </main>
     @extends('layouts/footer')
-    @extends('layouts/go_to_top')
-    @extends('layouts/js')
 </body>
 
 </html>
