@@ -16,3 +16,5 @@ use Illuminate\Support\Facades\Route;
 Route::get('/', 'App\Http\Controllers\EventController@home');
 Route::get('/insert_event', 'App\Http\Controllers\EventController@insert');
 Route::post('/insert_event', 'App\Http\Controllers\EventController@store');
+Route::get('/insert_event_image', 'App\Http\Controllers\EventController@insert_image');
+Route::post('/insert_event_image', 'App\Http\Controllers\EventController@store_image');

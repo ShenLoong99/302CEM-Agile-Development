@@ -166,7 +166,7 @@
                             <!-- about-img -->
                             <div class="about-img ">
                                 <div class="about-back-img ">
-                                    <img style="width: 500px; height: 350px" src="https://mypenang.gov.my/uploads/event/347/cover/IMG_6862-1.JPG" alt="event photo">
+                                    <img style="width: 500px; height: 350px" src={{ $event->image }} alt="event photo">
                                 </div>
                             </div>
                         </div>
