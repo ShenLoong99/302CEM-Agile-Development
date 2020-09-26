@@ -20,7 +20,7 @@ class CreateEventsTable extends Migration
             $table->dateTime('date_time_end');
             $table->string('ev_location');
             $table->string('description');
-            $table->unsignedBigInteger('cat_ID');
+            $table->unsignedBigInteger('cat');
             $table->double('price');
             $table->unsignedBigInteger('max_participants');
             $table->unsignedBigInteger('admin_id');

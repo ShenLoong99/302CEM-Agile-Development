@@ -118,10 +118,10 @@
                             <label for="category" class="col-md-2 col-form-label">Category</label>
 
                             <select id="category" name="category" class="pt-0 px-5 form-control @error('category') is-invalid @enderror" autofocus>
-                              <option value="1" {{ ($event->cat_ID == 1) ? "selected" : "" }}>Entertainment</option>
-                              <option value="2" {{ ($event->cat_ID == 2) ? "selected" : "" }}>Talk</option>
-                              <option value="3" {{ ($event->cat_ID == 3) ? "selected" : "" }}>Seminar</option>
-                              <option value="4" {{ ($event->cat_ID == 4) ? "selected" : "" }}>Fair</option>
+                              <option value="1" {{ ($event->cat == 1) ? "selected" : "" }}>Entertainment</option>
+                              <option value="2" {{ ($event->cat == 2) ? "selected" : "" }}>Talk</option>
+                              <option value="3" {{ ($event->cat == 3) ? "selected" : "" }}>Seminar</option>
+                              <option value="4" {{ ($event->cat == 4) ? "selected" : "" }}>Fair</option>
                           </select>
 
                           @error('category')
@@ -197,6 +197,90 @@
                         <input id="max_participants" min=1 max=9999 type="number" class="form-control @error('max_participants') is-invalid @enderror" name="max_participants" value="{{ $event->max_participants }}"  autocomplete="max_participants" autofocus>
 
                         @error('max_participants')
+                        <span class="invalid-feedback" role="alert">
+                            <strong>{{ $message }}</strong>
+                        </span>
+                        @enderror
+                    </div>
+
+                    <div class="form-group row">
+                        <label for="main_img" class="col-md-4 col-form-label">Main Image URL</label>
+
+                        <input id="main_img" type="text" class="form-control @error('main_img') is-invalid @enderror" name="main_img" value="{{ $gallery[0] }}"  autocomplete="main_img" autofocus>
+
+                        @error('main_img')
+                        <span class="invalid-feedback" role="alert">
+                            <strong>{{ $message }}</strong>
+                        </span>
+                        @enderror
+                    </div>
+
+                    <div class="form-group row">
+                        <label for="img_1" class="col-md-4 col-form-label">Image 1 URL</label>
+
+                        <input id="img_1" type="text" class="form-control @error('img_1') is-invalid @enderror" name="img_1" value="{{ $gallery[1] }}"  autocomplete="img_1" autofocus>
+
+                        @error('img_1')
+                        <span class="invalid-feedback" role="alert">
+                            <strong>{{ $message }}</strong>
+                        </span>
+                        @enderror
+                    </div>
+
+                    <div class="form-group row">
+                        <label for="img_2" class="col-md-4 col-form-label">Image 2 URL</label>
+
+                        <input id="img_2" type="text" class="form-control @error('img_2') is-invalid @enderror" name="img_2" value="{{ $gallery[2] }}"  autocomplete="img_2" autofocus>
+
+                        @error('img_2')
+                        <span class="invalid-feedback" role="alert">
+                            <strong>{{ $message }}</strong>
+                        </span>
+                        @enderror
+                    </div>
+
+                    <div class="form-group row">
+                        <label for="img_3" class="col-md-4 col-form-label">Image 3 URL</label>
+
+                        <input id="img_3" type="text" class="form-control @error('img_3') is-invalid @enderror" name="img_3" value="{{ $gallery[3] }}"  autocomplete="img_3" autofocus>
+
+                        @error('img_3')
+                        <span class="invalid-feedback" role="alert">
+                            <strong>{{ $message }}</strong>
+                        </span>
+                        @enderror
+                    </div>
+
+                    <div class="form-group row">
+                        <label for="img_4" class="col-md-4 col-form-label">Image 4 URL</label>
+
+                        <input id="img_4" type="text" class="form-control @error('img_4') is-invalid @enderror" name="img_4" value="{{ $gallery[4] }}"  autocomplete="img_4" autofocus>
+
+                        @error('img_4')
+                        <span class="invalid-feedback" role="alert">
+                            <strong>{{ $message }}</strong>
+                        </span>
+                        @enderror
+                    </div>
+
+                    <div class="form-group row">
+                        <label for="img_5" class="col-md-4 col-form-label">Image 5 URL</label>
+
+                        <input id="img_5" type="text" class="form-control @error('img_5') is-invalid @enderror" name="img_5" value="{{ $gallery[5] }}"  autocomplete="img_5" autofocus>
+
+                        @error('img_5')
+                        <span class="invalid-feedback" role="alert">
+                            <strong>{{ $message }}</strong>
+                        </span>
+                        @enderror
+                    </div>
+
+                    <div class="form-group row">
+                        <label for="img_6" class="col-md-4 col-form-label">Image 6 URL</label>
+
+                        <input id="img_6" type="text" class="form-control @error('img_6') is-invalid @enderror" name="img_6" value="{{ $gallery[6] }}"  autocomplete="img_6" autofocus>
+
+                        @error('img_6')
                         <span class="invalid-feedback" role="alert">
                             <strong>{{ $message }}</strong>
                         </span>
