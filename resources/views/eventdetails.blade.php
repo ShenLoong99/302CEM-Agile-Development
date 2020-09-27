@@ -7,21 +7,21 @@
     <meta name="description" content="">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="manifest" href="site.webmanifest">
-    <link rel="shortcut icon" type="image/x-icon" href="assets/img/favicon.ico">
+    <link rel="shortcut icon" type="image/x-icon" href="../../assets/img/favicon.ico">
 
 	<!-- CSS here -->
-	<link rel="stylesheet" href="assets/css/bootstrap.min.css">
-	<link rel="stylesheet" href="assets/css/owl.carousel.min.css">
-	<link rel="stylesheet" href="assets/css/slicknav.css">
-    <link rel="stylesheet" href="assets/css/flaticon.css">
-    <link rel="stylesheet" href="assets/css/gijgo.css">
-	<link rel="stylesheet" href="assets/css/animate.min.css">
-	<link rel="stylesheet" href="assets/css/magnific-popup.css">
-	<link rel="stylesheet" href="assets/css/fontawesome-all.min.css">
-	<link rel="stylesheet" href="assets/css/themify-icons.css">
-	<link rel="stylesheet" href="assets/css/slick.css">
-	<link rel="stylesheet" href="assets/css/nice-select.css">
-	<link rel="stylesheet" href="assets/css/style.css">
+	<link rel="stylesheet" href="../../assets/css/bootstrap.min.css">
+	<link rel="stylesheet" href="../../assets/css/owl.carousel.min.css">
+	<link rel="stylesheet" href="../../assets/css/slicknav.css">
+    <link rel="stylesheet" href="../../assets/css/flaticon.css">
+    <link rel="stylesheet" href="../../assets/css/gijgo.css">
+	<link rel="stylesheet" href="../../assets/css/animate.min.css">
+	<link rel="stylesheet" href="../../assets/css/magnific-popup.css">
+	<link rel="stylesheet" href="../../assets/css/fontawesome-all.min.css">
+	<link rel="stylesheet" href="../../assets/css/themify-icons.css">
+	<link rel="stylesheet" href="../../assets/css/slick.css">
+	<link rel="stylesheet" href="../../assets/css/nice-select.css">
+	<link rel="stylesheet" href="../../assets/css/style.css">
 </head>
 <body>
     <!-- ? Preloader Start -->
@@ -30,7 +30,7 @@
             <div class="preloader-inner position-relative">
                 <div class="preloader-circle"></div>
                 <div class="preloader-img pere-text">
-                    <img src="assets/img/logo/loder.png" alt="">
+                    <img src="../../assets/img/logo/loder.png" alt="">
                 </div>
             </div>
         </div>
@@ -45,7 +45,7 @@
                     <!-- Logo -->
                     <div class="col-xl-2 col-lg-2 col-md-1">
                         <div class="logo">
-                            <a href="index.html"><img src="assets/img/logo/logo.png" alt=""></a>
+                            <a href="index.html"><img src="../../assets/img/logo/logo.png" alt=""></a>
                         </div>
                     </div>
                     <div class="col-xl-10 col-lg-10 col-md-10">
@@ -108,45 +108,95 @@
                     <div class="about-caption mb-50">
                         <!-- Section Tittle -->
                         <div class="section-tittle mb-35">
-                            <h2>The Biggest Digital Conference.</h2>
+                            <h2>{{$event -> ev_name}}</h2>
                         </div>
-                        <p>There arge many variations ohf passages of sorem gpsum ilable, but the majority have suffered alteration in some form, by ected humour, or randomised words whi.rere arge many variations ohf passages of sorem gpsum ilable.</p>
-                        <p>There arge many variations ohf passages of sorem gpsum ilable, but the majority have suffered alteration in.</p>
+                        <p>{{$event -> description}}</p>
                     </div>
                     <div class="row">
                         <div class="col-lg-6 col-md-6 col-sm-6 col-xs-10">
                             <div class="single-caption mb-20">
-                                <div class="caption-icon">
-                                    <span class="flaticon-communications-1"></span>
+                                <div >
+                                    <h5> <img src="https://www.flaticon.com/svg/static/icons/svg/684/684809.svg" width="25" height="25"> &nbsp;Location</h5>
+                                    <p>
+                                        &emsp;&emsp;
+                                        {{$event -> ev_location}}
+                                    </p>
+                                    <br/>
+                                     <h5><img src="https://www.flaticon.com/svg/static/icons/svg/1464/1464205.svg" width="25" height="25"> &nbsp; Max Participants</h5>
+                                    <p>
+                                        &emsp;&emsp;&nbsp;
+                                        {{$event -> max_participants}}
+                                    </p>
+                                    <br/>
+                                     <h5> <img src="https://www.flaticon.com/svg/static/icons/svg/1141/1141964.svg" width="25" height="25"> &nbsp; Category</h5>
+                                    @if($event -> cat==1)
+                                    <p>
+                                        &emsp;&emsp;&nbsp;
+                                        Entertainment
+                                    </p>
+                                    @elseif($event -> cat==2)
+                                    <p>
+                                        &emsp;&emsp;&nbsp;
+                                        Talk
+                                    </p>
+                                     @elseif($event -> cat==3)
+                                    <p>
+                                        &emsp;&emsp;&nbsp;
+                                        Seminar
+                                    </p>
+                                     @elseif($event -> cat==4)
+                                    <p>
+                                        &emsp;&emsp;&nbsp;
+                                        Fair
+                                    </p>
+                                    @endif
                                 </div>
-                                <div class="caption">
-                                    <h5>Where</h5>
-                                    <p>Seoul, South Korea</p>
-                                </div>
+
                             </div>
                         </div>
                         <div class="col-lg-6 col-md-6 col-sm-6 col-xs-10">
-                            <div class="single-caption mb-20">
-                                <div class="caption-icon">
-                                    <span class="flaticon-education"></span>
-                                </div>
+                       
+                        
                                 <div class="caption">
-                                    <h5>When</h5>
-                                    <p>Oct. 15. 2020</p>
+                                   
+                                    <h5> 
+                                        <img src="https://www.flaticon.com/svg/static/icons/svg/2088/2088617.svg" width="25" height="25"> &nbsp;Start Date
+                                    </h5>
+                                    <p> 
+                                        &emsp;&emsp;
+                                        {{$event -> date_time_start}}
+                                    </p>
+                                </div><br/>
+                                <div class="caption">
+                                    <h5> 
+                                        <img src="https://www.flaticon.com/svg/static/icons/svg/2088/2088617.svg" width="25" height="25"> &nbsp;End Date</h5>
+                                    <p>
+                                        &emsp;&emsp;
+                                        {{$event -> date_time_end}}
+                                    </p>
                                 </div>
-                            </div>
+                                <br/>
+                                <div class="caption">
+                                    <h5> 
+                                        <img src="https://www.flaticon.com/svg/static/icons/svg/985/985714.svg" width="25" height="25"> &nbsp;Entrance Fees</h5>
+                                    <p>
+                                        &emsp;&emsp;
+                                        RM{{$event -> price}}
+                                    </p>
+                                </div>
+                           
                         </div>
                     </div>
-                    <a href="#" class="btn mt-50">Get Your Ticket</a>
+                    <a href="#" class="btn mt-50">Get Your Ticket Now!</a>
                 </div>
                 <div class="col-lg-6 col-md-12">
                     <!-- about-img -->
                     <div class="about-img ">
                         <div class="about-font-img d-none d-lg-block">
-                            <img src="assets/img/gallery/about2.png" alt="">
+                            <img src="../../assets/img/gallery/about2.png" alt="">
                         </div>
                         <div class="about-back-img ">
-                            <img src="assets/img/gallery/about1.png" alt="">
+                            <img src="../../assets/img/gallery/about1.png" alt="">
                         </div>
                     </div>
                 </div>
@@ -162,42 +212,42 @@
                 <div class="col-lg-3 col-md-3 col-sm-6">
                     <div class="gallery-box">
                         <div class="single-gallery">
-                            <div class="gallery-img " style="background-image: url(assets/img/gallery/gallery1.png);"></div>
+                            <div class="gallery-img " style="background-image: url(../../assets/img/gallery/gallery1.png);"></div>
                         </div>
                     </div>
                 </div>
                 <div class="col-lg-3 col-md-3 col-sm-6">
                     <div class="gallery-box">
                         <div class="single-gallery">
-                            <div class="gallery-img " style="background-image: url(assets/img/gallery/gallery2.png);"></div>
+                            <div class="gallery-img " style="background-image: url(../../assets/img/gallery/gallery2.png);"></div>
                         </div>
                     </div>
                 </div>
                 <div class="col-lg-6 col-md-6 col-sm-6">
                     <div class="gallery-box">
                         <div class="single-gallery">
-                            <div class="gallery-img " style="background-image: url(assets/img/gallery/gallery3.png);"></div>
+                            <div class="gallery-img " style="background-image: url(../../assets/img/gallery/gallery3.png);"></div>
                         </div>
                     </div>
                 </div>
                 <div class="col-lg-6 col-md-6 col-sm-6">
                     <div class="gallery-box">
                         <div class="single-gallery">
-                            <div class="gallery-img " style="background-image: url(assets/img/gallery/gallery4.png);"></div>
+                            <div class="gallery-img " style="background-image: url(../../assets/img/gallery/gallery4.png);"></div>
                         </div>
                     </div>
                 </div>
                 <div class="col-lg-3 col-md-3 col-sm-6">
                     <div class="gallery-box">
                         <div class="single-gallery">
-                             <div class="gallery-img " style="background-image: url(assets/img/gallery/gallery5.png);"></div>
+                             <div class="gallery-img " style="background-image: url(../../assets/img/gallery/gallery5.png);"></div>
                         </div>
                     </div>
                 </div>
                 <div class="col-lg-3 col-md-3 col-sm-6">
                     <div class="gallery-box">
                         <div class="single-gallery">
-                            <div class="gallery-img " style="background-image: url(assets/img/gallery/gallery6.png);"></div>
+                            <div class="gallery-img " style="background-image: url(../../assets/img/gallery/gallery6.png);"></div>
                         </div>
                     </div>
                 </div>
@@ -268,7 +318,7 @@
                                          onblur="this.placeholder = ' Email Address '">
                                          <div class="form-icon">
                                              <button type="submit" name="submit" id="newsletter-submit"
-                                             class="email_icon newsletter-submit button-contactForm"><img src="assets/img/gallery/form.png" alt=""></button>
+                                             class="email_icon newsletter-submit button-contactForm"><img src="../../assets/img/gallery/form.png" alt=""></button>
                                          </div>
                                          <div class="mt-10 info"></div>
                                      </form>
@@ -283,7 +333,7 @@
                     <div class="col-xl-3 col-lg-3 col-md-4 col-sm-6">
                         <!-- logo -->
                         <div class="footer-logo mb-20">
-                        <a href="index.html"><img src="assets/img/logo/logo2_footer.png" alt=""></a>
+                        <a href="index.html"><img src="../../assets/img/logo/logo2_footer.png" alt=""></a>
                         </div>
                     </div>
                     <div class="col-xl-3 col-lg-3 col-md-4 col-sm-5">
@@ -341,42 +391,42 @@
 
     <!-- JS here -->
 
-    <script src="./assets/js/vendor/modernizr-3.5.0.min.js"></script>
+    <script src="../../assets/js/vendor/modernizr-3.5.0.min.js"></script>
     <!-- Jquery, Popper, Bootstrap -->
-    <script src="./assets/js/vendor/jquery-1.12.4.min.js"></script>
-    <script src="./assets/js/popper.min.js"></script>
-    <script src="./assets/js/bootstrap.min.js"></script>
+    <script src="../../assets/js/vendor/jquery-1.12.4.min.js"></script>
+    <script src="../../assets/js/popper.min.js"></script>
+    <script src="../../assets/js/bootstrap.min.js"></script>
     <!-- Jquery Mobile Menu -->
-    <script src="./assets/js/jquery.slicknav.min.js"></script>
+    <script src="../../assets/js/jquery.slicknav.min.js"></script>
 
     <!-- Jquery Slick , Owl-Carousel Plugins -->
-    <script src="./assets/js/owl.carousel.min.js"></script>
-    <script src="./assets/js/slick.min.js"></script>
+    <script src="../../assets/js/owl.carousel.min.js"></script>
+    <script src="../../assets/js/slick.min.js"></script>
     <!-- One Page, Animated-HeadLin -->
-    <script src="./assets/js/wow.min.js"></script>
-    <script src="./assets/js/animated.headline.js"></script>
-    <script src="./assets/js/jquery.magnific-popup.js"></script>
+    <script src="../../assets/js/wow.min.js"></script>
+    <script src="../../assets/js/animated.headline.js"></script>
+    <script src="../../assets/js/jquery.magnific-popup.js"></script>
 
     <!-- Date Picker -->
-    <script src="./assets/js/gijgo.min.js"></script>
+    <script src="../../assets/js/gijgo.min.js"></script>
     <!-- Nice-select, sticky -->
-    <script src="./assets/js/jquery.nice-select.min.js"></script>
-    <script src="./assets/js/jquery.sticky.js"></script>
+    <script src="../../assets/js/jquery.nice-select.min.js"></script>
+    <script src="../../assets/js/jquery.sticky.js"></script>
     
     <!-- counter , waypoint -->
-    <script src="./assets/js/jquery.counterup.min.js"></script>
-    <script src="./assets/js/waypoints.min.js"></script>
-    <script src="./assets/js/jquery.countdown.min.js"></script>
+    <script src="../../assets/js/jquery.counterup.min.js"></script>
+    <script src="../../assets/js/waypoints.min.js"></script>
+    <script src="../../assets/js/jquery.countdown.min.js"></script>
     <!-- contact js -->
-    <script src="./assets/js/contact.js"></script>
-    <script src="./assets/js/jquery.form.js"></script>
-    <script src="./assets/js/jquery.validate.min.js"></script>
-    <script src="./assets/js/mail-script.js"></script>
-    <script src="./assets/js/jquery.ajaxchimp.min.js"></script>
+    <script src="../../assets/js/contact.js"></script>
+    <script src="../../assets/js/jquery.form.js"></script>
+    <script src="../../assets/js/jquery.validate.min.js"></script>
+    <script src="../../assets/js/mail-script.js"></script>
+    <script src="../../assets/js/jquery.ajaxchimp.min.js"></script>
     
     <!-- Jquery Plugins, main Jquery -->    
-    <script src="./assets/js/plugins.js"></script>
-    <script src="./assets/js/main.js"></script>
+    <script src="../../assets/js/plugins.js"></script>
+    <script src="../../assets/js/main.js"></script>
     
     </body>
 </html>

@@ -17,9 +17,10 @@ Route::get('/', function () {
     return view('welcome');
 });
 
-Route::get('/eventdetails', function () {
-    return view('eventdetails');
-});
+
+Route::get('/e/eventdetails/{event}', 'App\Http\Controllers\EventController@edit');
+Route::get('/e/edit/{event}', 'App\Http\Controllers\EventsController@edit');
+Route::get('/e/update/{event}', 'App\Http\Controllers\EventsController@update');
 
 Auth::routes();
 
