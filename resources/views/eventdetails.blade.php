@@ -101,10 +101,14 @@
     </div>
     <!-- Hero End -->
     <!--? About Law Start-->
-    <section class="about-low-area section-padding2">
+    <a href="#" class="btn mt-50" style="margin-right: 50px; float: right;">
+        Delete Event
+    </a>
+    <section class="about-low-area section-padding">
         <div class="container">
             <div class="row">
                 <div class="col-lg-6 col-md-12">
+
                     <div class="about-caption mb-50">
                         <!-- Section Tittle -->
                         <div class="section-tittle mb-35">
