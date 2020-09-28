@@ -104,7 +104,7 @@
     <form action="/e/eventdetails/{{$event -> id}}" method="POST">
         @csrf
         @method('DELETE')
-        <button class="btn mt-50" style="margin-right: 50px; float: right;">
+        <button class="btn mt-50" style="margin-right: 50px; float: right;" onclick="return confirm('Are you sure you want to delete this event?')">
         Delete Event
         </button>
     </form>

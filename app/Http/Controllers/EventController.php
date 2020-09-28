@@ -50,7 +50,7 @@ class EventController extends Controller
 		$event = Event::findOrFail($event_id);
 		$event -> delete();
 
-		return redirect('/e/eventdetails');
+		return redirect('/e/eventdetails/1');
 	}
 
 }
