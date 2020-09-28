@@ -101,15 +101,21 @@
     </div>
     <!-- Hero End -->
     <!--? About Law Start-->
-    <a href="#" class="btn mt-50" style="margin-right: 50px; float: right;">
+    <form action="/e/eventdetails/{{$event -> id}}" method="POST">
+        @csrf
+        @method('DELETE')
+        <button class="btn mt-50" style="margin-right: 50px; float: right;">
         Delete Event
-    </a>
+        </button>
+    </form>
+
+
     <section class="about-low-area section-padding">
         <div class="container">
             <div class="row">
                 <div class="col-lg-6 col-md-12">
 
-                    <div class="about-caption mb-50">
+                    <div class="about-caption mb-50" style="text-align: justify;">
                         <!-- Section Tittle -->
                         <div class="section-tittle mb-35">
                             <h2>{{$event -> ev_name}}</h2>

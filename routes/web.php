@@ -17,10 +17,9 @@ Route::get('/', function () {
     return view('welcome');
 });
 
-
-Route::get('/e/eventdetails/{event}', 'App\Http\Controllers\EventController@edit');
-Route::get('/e/edit/{event}', 'App\Http\Controllers\EventsController@edit');
-Route::get('/e/update/{event}', 'App\Http\Controllers\EventsController@update');
+//Route to event details page
+Route::get('/e/eventdetails/{event}', 'App\Http\Controllers\EventController@show');
+Route::delete('/e/eventdetails/{event}', 'App\Http\Controllers\EventController@destroy');
 
 Auth::routes();
 
