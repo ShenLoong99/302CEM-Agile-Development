@@ -8,61 +8,44 @@ use App\Models\Gallery;
 
 class EventsController extends Controller
 {
-	// public function index(){
-
-
-	// }
-
 	public function edit($event_id){
-		// $events = Event::all()->toArray();
 		$event = Event::findOrFail($event_id);
-
-		// $gallery_first = Gallery::where('ev_ID', $event_id)->first();
-		// $event["image"] = $gallery_first["image"];
+		$event["price"] = number_format((float)$event["price"], 2, '.', '');
 
 		$gallery = Gallery::where('ev_ID', $event_id)->get();
 		$gallery_filtered = array();
 		$counter = 1;
+
 		foreach ($gallery as $value) {
 			if ($value['main'] == 1){
-				// $gallery_filtered["main"] == $value['image'];
 				$gallery_filtered[0] = $value['image'];
 			} 
 			else {
 				$gallery_filtered[$counter] = $value['image'];
 				$counter++;
-				// $gallery_filtered["sub"] == $value['image'];
 			}
 		}
+
 		return view('events.edit', ['event' => $event, 'gallery' => $gallery_filtered]);
 	}
 
-	// public function index($user)
- //    {
- //    	$user = User::findOrFail($user);
-
- //        return view('profiles.index', [
- //        	'user' => $user, 
- //        ]);
- //    }
-
 	public function update(Request $request, $id){
 		$data = request()->validate([
-			'event_name' => 'required|min:1|max:50',
+			'event_name' => 'required|max:255',
+			'description' => 'required|max:255',
+			'category' => 'required',
+			'event_location' => 'required|max:255',
 			'date_time_start' => 'required|date',
 			'date_time_end' => 'required|date|after:date_time_start',
-			'event_location' => 'required|max:50',
-			'description' => 'required|min:1|max:255',
-			'category' => 'required',
-			'price' => 'required|min:0|max:9999',
-			'max_participants' => 'required|min:1|max:4000',
-			'main_img' => 'required',
-			'img_1' => 'required',
-			'img_2' => 'required',
-			'img_3' => 'required',
-			'img_4' => 'required',
-			'img_5' => 'required',
-			'img_6' => 'required',
+			'price' => 'required|numeric|min:0|max:9999|regex:/^\d+(\.\d{1,2})?$/',
+			'max_participants' => 'required|numeric|min:40|max:3000',
+			'main_img' => 'required|max:1000|url',
+			'img_1' => 'required|max:1000|url',
+			'img_2' => 'required|max:1000|url',
+			'img_3' => 'required|max:1000|url',
+			'img_4' => 'required|max:1000|url',
+			'img_5' => 'required|max:1000|url',
+			'img_6' => 'required|max:1000|url',
 		]);
 
 		$event = Event::find($id);	
@@ -107,42 +90,6 @@ class EventsController extends Controller
 		$gallery->image = $request->get('img_6');
 		$gallery->save();
 
-		// $gallery = new Gallery();
-
-		// $main_img = request('main_img');
-		// $img_1 = request('img_1');
-		// $img_2 = request('img_2');
-		// $img_3 = request('img_3');
-		// $img_4 = request('img_4');
-		// $img_5 = request('img_5');
-		// $img_6 = request('img_6');
-
-		// $gallery = [
-		// 	['ev_ID' => $id, 'image' => $main_img, 'main' => 1], 
-		// 	['ev_ID' => $id, 'image' => $img_1, 'main' => 0], 
-		// 	['ev_ID' => $id, 'image' => $img_2, 'main' => 0], 
-		// 	['ev_ID' => $id, 'image' => $img_3, 'main' => 0], 
-		// 	['ev_ID' => $id, 'image' => $img_4, 'main' => 0], 
-		// 	['ev_ID' => $id, 'image' => $img_5, 'main' => 0], 
-		// 	['ev_ID' => $id, 'image' => $img_6, 'main' => 0]
-		// ];
-
-		// // Gallery::update($gallery); 
-		// Gallery::whereId($id)->update($gallery);
-
-
 		return redirect('/e/edit/1')->with('message','Updated successfully');
-
-		// $imagePath = request('image')->store('uploads', 'public');
-
-		// $image = Image::make(public_path("storage/{$imagePath}"))->fit(1200, 1200);
-		// $image->save();
-		
-		// auth()->user()->posts()->create([
-		// 	'caption' => $data['caption'],
-		// 	'image' => $imagePath, 
-		// ]);
-
-		// return redirect('/profile/' . auth()->user()->id);
 	}
 }
