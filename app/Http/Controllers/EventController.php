@@ -23,14 +23,9 @@ class EventController extends Controller
         return view('insert_event');
     }
 
-    public function insert_image() {
-        $id = request('id');
-        $event = Event::findOrFail($id);
-        return view('insert_event_image', ['event' => $event, 'id' => $id]);
-    }
-
     public function store() {
         $event = new Event();
+        $event_name = request('name');
         $event->ev_name = request('name');
         $event->date_time_start = request('start');
         $event->date_time_end = request('end');
@@ -42,12 +37,8 @@ class EventController extends Controller
         $event->admin_id = 1;
         $event->active = 1;
         $event->save();
-        return redirect('/insert_event')->with('msg', 'New event is added');
-    }
-
-    public function store_image() {
+        $currID = $event->id;
         $gallery = new Gallery();
-        $id = request('id');
         $main_img = request('main_img');
         $img_1 = request('img_1');
         $img_2 = request('img_2');
@@ -56,15 +47,15 @@ class EventController extends Controller
         $img_5 = request('img_5');
         $img_6 = request('img_6');
         $gallery = [
-            ['ev_ID' => $id, 'image' => $main_img, 'main' => 1], 
-            ['ev_ID' => $id, 'image' => $img_1, 'main' => 0], 
-            ['ev_ID' => $id, 'image' => $img_2, 'main' => 0], 
-            ['ev_ID' => $id, 'image' => $img_3, 'main' => 0], 
-            ['ev_ID' => $id, 'image' => $img_4, 'main' => 0], 
-            ['ev_ID' => $id, 'image' => $img_5, 'main' => 0], 
-            ['ev_ID' => $id, 'image' => $img_6, 'main' => 0]
+            ['ev_ID' => $currID, 'image' => $main_img, 'main' => 1], 
+            ['ev_ID' => $currID, 'image' => $img_1, 'main' => 2], 
+            ['ev_ID' => $currID, 'image' => $img_2, 'main' => 3], 
+            ['ev_ID' => $currID, 'image' => $img_3, 'main' => 4], 
+            ['ev_ID' => $currID, 'image' => $img_4, 'main' => 5], 
+            ['ev_ID' => $currID, 'image' => $img_5, 'main' => 6], 
+            ['ev_ID' => $currID, 'image' => $img_6, 'main' => 7]
         ];
         Gallery::insert($gallery); // Eloquent approach
-        return back()->with('msg', 'All new images are added');
+        return redirect('/insert_event')->with('msg', 'New event is added');
     }
 }

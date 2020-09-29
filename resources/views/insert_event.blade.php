@@ -131,6 +131,35 @@
                         <p>Event Pricing</p>
                         <input type="text" name="price" class="form-control" placeholder="Event Price (RM)" pattern="[0-9]+(\\.[0-9][0-9]?)?" autocomplete="off" required />
                     </div>
+                </div><br>
+                <h3>Insert New Images</h3>
+                <div>
+                    <p>Main Image: </p>
+                    <input type="text" name="main_img" placeholder="Insert image URL" title="Make sure you have enter valid image URL, social media image URL are not advisable" class="form-control" maxlength="1000" automcomplete="off" required />
+                </div>
+                <div>
+                    <p>Gallery Images (1): </p>
+                    <input type="text" name="img_1" placeholder="Insert image URL" title="Make sure you have enter valid image URL, social media image URL are not advisable" class="form-control" maxlength="1000" automcomplete="off" required />
+                </div>
+                <div>
+                    <p>Gallery Images (2): </p>
+                    <input type="text" name="img_2" placeholder="Insert image URL" title="Make sure you have enter valid image URL, social media image URL are not advisable" class="form-control" maxlength="1000" automcomplete="off" required />
+                </div>
+                <div>
+                    <p>Gallery Images (3): </p>
+                    <input type="text" name="img_3" placeholder="Insert image URL" title="Make sure you have enter valid image URL, social media image URL are not advisable" class="form-control" maxlength="1000" automcomplete="off" required />
+                </div>
+                <div>
+                    <p>Gallery Images (4): </p>
+                    <input type="text" name="img_4" placeholder="Insert image URL" title="Make sure you have enter valid image URL, social media image URL are not advisable" class="form-control" maxlength="1000" automcomplete="off" required />
+                </div>
+                <div>
+                    <p>Gallery Images (5): </p>
+                    <input type="text" name="img_5" placeholder="Insert image URL" title="Make sure you have enter valid image URL, social media image URL are not advisable" class="form-control" maxlength="1000" automcomplete="off" required />
+                </div>
+                <div>
+                    <p>Gallery Images (6): </p>
+                    <input type="text" name="img_6" placeholder="Insert image URL" title="Make sure you have enter valid image URL, social media image URL are not advisable" class="form-control" maxlength="1000" automcomplete="off" required />
                 </div>
                 <button name="submit" type="submit" class="btn mt-50">Insert New Event!</button>
             </form>
