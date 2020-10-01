@@ -104,7 +104,7 @@
     <form action="/e/eventdetails/{{$event -> id}}" method="POST">
         @csrf
         @method('DELETE')
-        <button class="btn mt-50" style="margin-right: 50px; float: right;" onclick="return confirm('Are you sure you want to delete this event?')">
+        <button class="btn mt-50" style="margin-right: 50px; float: right; background-color:#C70039 ;" onclick="return confirm('Are you sure you want to delete this event?')">
         Delete Event
         </button>
     </form>
@@ -203,10 +203,10 @@
                     <!-- about-img -->
                     <div class="about-img ">
                         <div class="about-font-img d-none d-lg-block">
-                            <img src="../../assets/img/gallery/about2.png" alt="">
+                            <img src={{$gallery[0]}} alt="" width="300" height="250">
                         </div>
                         <div class="about-back-img ">
-                            <img src="../../assets/img/gallery/about1.png" alt="">
+                            <img src={{$gallery[1]}} alt="" width="550" height="650">
                         </div>
                     </div>
                 </div>
@@ -222,42 +222,42 @@
                 <div class="col-lg-3 col-md-3 col-sm-6">
                     <div class="gallery-box">
                         <div class="single-gallery">
-                            <div class="gallery-img " style="background-image: url(../../assets/img/gallery/gallery1.png);"></div>
+                            <div class="gallery-img " style="background-image: url({{$gallery[2]}});"></div>
                         </div>
                     </div>
                 </div>
                 <div class="col-lg-3 col-md-3 col-sm-6">
                     <div class="gallery-box">
                         <div class="single-gallery">
-                            <div class="gallery-img " style="background-image: url(../../assets/img/gallery/gallery2.png);"></div>
+                            <div class="gallery-img " style="background-image: url({{$gallery[1]}});"></div>
                         </div>
                     </div>
                 </div>
                 <div class="col-lg-6 col-md-6 col-sm-6">
                     <div class="gallery-box">
                         <div class="single-gallery">
-                            <div class="gallery-img " style="background-image: url(../../assets/img/gallery/gallery3.png);"></div>
+                            <div class="gallery-img " style="background-image: url({{$gallery[3]}});"></div>
                         </div>
                     </div>
                 </div>
                 <div class="col-lg-6 col-md-6 col-sm-6">
                     <div class="gallery-box">
                         <div class="single-gallery">
-                            <div class="gallery-img " style="background-image: url(../../assets/img/gallery/gallery4.png);"></div>
+                            <div class="gallery-img " style="background-image: url({{$gallery[6]}});"></div>
                         </div>
                     </div>
                 </div>
                 <div class="col-lg-3 col-md-3 col-sm-6">
                     <div class="gallery-box">
                         <div class="single-gallery">
-                             <div class="gallery-img " style="background-image: url(../../assets/img/gallery/gallery5.png);"></div>
+                             <div class="gallery-img " style="background-image: url({{$gallery[4]}});"></div>
                         </div>
                     </div>
                 </div>
                 <div class="col-lg-3 col-md-3 col-sm-6">
                     <div class="gallery-box">
                         <div class="single-gallery">
-                            <div class="gallery-img " style="background-image: url(../../assets/img/gallery/gallery6.png);"></div>
+                            <div class="gallery-img " style="background-image: url({{$gallery[5]}});"></div>
                         </div>
                     </div>
                 </div>
