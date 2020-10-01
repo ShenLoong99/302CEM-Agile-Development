@@ -100,6 +100,10 @@
                             {{session('message')}}
                         </div>
                         @endif
+
+                        @if($errors->any())
+                        {!! implode('', $errors->all('<div class="alert alert-danger">:message</div>')) !!}
+                        @endif
                         <br/>
 
                         <div class="form-group row">
@@ -196,7 +200,10 @@
                     <div class="form-group row">
                         <label for="price" class="col-md-4 col-form-label">Event Pricing</label>
 
-                        <input id="price" min=0 max=9999 step='0.01' placeholder='0.00' type="number" class="form-control @error('price') is-invalid @enderror" name="price" value="{{ Request::get('price') ?? old('price') ?? $event->price }}"  autocomplete="price" autofocus>
+                        <div style="display: flex; width: 100%;">
+                            <h5 style="flex: .05; line-height: 1.8; padding: 0 10px; box-sizing: border-box;">RM</h5>
+                            <input style="flex: .95;" id="price" min=0 max=9999 step='0.01' placeholder='0.00' type="number" class="form-control @error('price') is-invalid @enderror" name="price" value="{{ Request::get('price') ?? old('price') ?? $event->price }}"  autocomplete="price" autofocus>
+                        </div>
 
                         @error('price')
                         <span class="invalid-feedback" role="alert">
