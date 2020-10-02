@@ -16,3 +16,12 @@ use Illuminate\Support\Facades\Route;
 Route::get('/', 'App\Http\Controllers\EventController@home');
 Route::get('/insert_event', 'App\Http\Controllers\EventController@insert');
 Route::post('/insert_event', 'App\Http\Controllers\EventController@store');
+// Wayne part
+Route::get('/edit/{event}', 'App\Http\Controllers\EventController@edit');
+Route::get('/update/{event}', 'App\Http\Controllers\EventController@update');
+//Route to event details page - Shaun part
+Route::get('/eventdetails/{event}', 'App\Http\Controllers\EventController@show');
+Route::delete('/eventdetails/{event}', 'App\Http\Controllers\EventController@destroy');
+//Khai Shian part
+Route::get('/view_event', 'App\Http\Controllers\EventController@view_event');
+Route::get('/admin_event', 'App\Http\Controllers\EventController@event');

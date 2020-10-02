@@ -1,11 +1,9 @@
 <!doctype html>
 <html class="no-js" lang="zxx">
-
 <head>
     <title>Insert New Event</title>
     @extends('layouts.head')
 </head>
-
 <body>
     <!-- ? Preloader Start -->
     <div id="preloader-active">
