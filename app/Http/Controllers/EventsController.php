@@ -14,8 +14,8 @@ class EventsController extends Controller
 
 		$gallery = Gallery::where('ev_ID', $event_id)->get();
 		$gallery_filtered = array();
+		
 		$counter = 1;
-
 		foreach ($gallery as $value) {
 			if ($value['main'] == 1){
 				$gallery_filtered[0] = $value['image'];
@@ -33,12 +33,13 @@ class EventsController extends Controller
 		$data = request()->validate([
 			'event_name' => 'required|max:255',
 			'description' => 'required|max:255',
-			'category' => 'required',
+			'category' => 'required|numeric|min:1|max:4',
 			'event_location' => 'required|max:255',
 			'date_time_start' => 'required|date',
 			'date_time_end' => 'required|date|after:date_time_start',
 			'price' => 'required|numeric|min:0|max:9999|regex:/^\d+(\.\d{1,2})?$/',
 			'max_participants' => 'required|numeric|min:40|max:3000',
+			'active' => 'required|numeric|min:1|max:3',
 			'main_img' => 'required|max:1000|url',
 			'img_1' => 'required|max:1000|url',
 			'img_2' => 'required|max:1000|url',
@@ -90,6 +91,7 @@ class EventsController extends Controller
 		$gallery->image = $request->get('img_6');
 		$gallery->save();
 
-		return redirect('/e/edit/1')->with('message','Updated successfully');
+		// return redirect('/e/edit/1')->with('message','Updated successfully');
+		return true;
 	}
 }

@@ -3,6 +3,8 @@
 namespace Tests\Unit;
 
 use PHPUnit\Framework\TestCase;
+// use Tests\TestCase;
+use App\Models\Event;
 
 class ExampleTest extends TestCase
 {
@@ -13,6 +15,8 @@ class ExampleTest extends TestCase
      */
     public function testBasicTest()
     {
-        $this->assertTrue(true);
+    	// $event = factory(Event::class)->create();
+
+    	$this->assertTrue(true);
     }
 }
