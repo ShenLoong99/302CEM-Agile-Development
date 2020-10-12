@@ -38,19 +38,20 @@ class EventController extends Controller
 	}
 
 	// public function index($user)
- //    {
- //    	$user = User::findOrFail($user);
+ 	//    {
+ 	//    	$user = User::findOrFail($user);
 
- //        return view('profiles.index', [
- //        	'user' => $user, 
- //        ]);
- //    }
+ 	//        return view('profiles.index', [
+ 	//        	'user' => $user, 
+ 	//        ]);
+ 	//    }
 
 	public function destroy($event_id){
 		$event = Event::findOrFail($event_id);
 		$event -> delete();
 
 		return redirect('/e/eventdetails/1');
+		//return true;
 	}
 
 }
