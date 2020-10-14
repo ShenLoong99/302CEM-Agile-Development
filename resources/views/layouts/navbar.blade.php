@@ -44,7 +44,7 @@
                                 </nav>
                             </div>
                             <div class="header-right-btn f-right d-none d-lg-block ml-30">
-                                <a href="#" class="btn header-btn">Login / Register</a>
+                                <a href="{{ route('login') }}" class="btn header-btn">Login / Register</a>
                             </div>
                         </div>
                     </div>

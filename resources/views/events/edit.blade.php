@@ -51,7 +51,7 @@
                                     </nav>
                                 </div>
                                 <div class="header-right-btn f-right d-none d-lg-block ml-30">
-                                    <a href="#" class="btn header-btn">Login / Register</a>
+                                    <a href="{{ route('login') }}" class="btn header-btn">Login / Register</a>
                                 </div>
                             </div>
                         </div>
@@ -101,9 +101,9 @@
                         </div>
                         @endif
 
-                       <!--  @if($errors->any())
+                        @if($errors->any())
                         {!! implode('', $errors->all('<div class="alert alert-danger">:message</div>')) !!}
-                        @endif -->
+                        @endif
                         <br/>
 
                         <div class="form-group row">
@@ -111,11 +111,11 @@
 
                             <input id="event_name" type="text" class="form-control @error('event_name') is-invalid @enderror" name="event_name" value="{{ Request::get('event_name') ?? old('event_name') ?? $event->ev_name }}"   autocomplete="event_name" autofocus>
 
-                            <!-- @error('event_name')
+                            @error('event_name')
                             <span class="invalid-feedback" role="alert">
                                 <strong>{{ $message }}</strong>
                             </span>
-                            @enderror -->
+                            @enderror
                         </div>
 
                         <div class="form-group row">
@@ -123,11 +123,11 @@
 
                             <textarea id="description" rows="4" type="text" class="form-control @error('description') is-invalid @enderror" name="description"  autocomplete="description" autofocus>{{ Request::get('description') ?? old('description') ?? $event->description }}</textarea>
 
-                           <!--  @error('description')
+                            @error('description')
                             <span class="invalid-feedback" role="alert">
                                 <strong>{{ $message }}</strong>
                             </span>
-                            @enderror -->
+                            @enderror
                         </div>
 
                         <div class="form-group row mt-4">
@@ -140,11 +140,11 @@
                               <option value="4" {{ ($event->cat == 4) ? "selected" : "" }}>Product Fair</option>
                           </select>
 
-                          <!-- @error('category')
+                          @error('category')
                           <span class="invalid-feedback" role="alert">
                             <strong>{{ $message }}</strong>
                         </span>
-                        @enderror -->
+                        @enderror
                     </div>
 
                     
@@ -154,11 +154,11 @@
 
                         <input id="event_location" type="text" class="form-control @error('event_location') is-invalid @enderror" name="event_location" value="{{ Request::get('event_location') ?? old('event_location') ?? $event->ev_location }}"  autocomplete="event_location" autofocus>
 
-                        <!-- @error('event_location')
+                        @error('event_location')
                         <span class="invalid-feedback" role="alert">
                             <strong>{{ $message }}</strong>
                         </span>
-                        @enderror -->
+                        @enderror
                     </div>
 
                     <div class="form-group row">
@@ -166,11 +166,11 @@
 
                         <input id="date_time_start" type="datetime-local" class="form-control @error('date_time_start') is-invalid @enderror"name="date_time_start" value="{{ date('Y-m-d\TH:i', strtotime($event->date_time_start)) }}" autofocus>
 
-                        <!-- @error('date_time_start')
+                        @error('date_time_start')
                         <span class="invalid-feedback" role="alert">
                             <strong>{{ $message }}</strong>
                         </span>
-                        @enderror -->
+                        @enderror
                     </div>
 
                     <div class="form-group row">
@@ -178,11 +178,11 @@
 
                         <input id="date_time_end" type="datetime-local" class="form-control @error('date_time_end') is-invalid @enderror"name="date_time_end" value="{{ date('Y-m-d\TH:i', strtotime($event->date_time_end)) }}" autofocus>
 
-                        <!-- @error('date_time_end')
+                        @error('date_time_end')
                         <span class="invalid-feedback" role="alert">
                             <strong>{{ $message }}</strong>
                         </span>
-                        @enderror -->
+                        @enderror
                     </div>
 
                     <div class="form-group row">
@@ -190,11 +190,11 @@
 
                         <input id="max_participants" min=1 max=9999 type="number" class="form-control @error('max_participants') is-invalid @enderror" name="max_participants" value="{{ Request::get('max_participants') ?? old('max_participants') ?? $event->max_participants }}"  autocomplete="max_participants" autofocus>
 
-                        <!-- @error('max_participants')
+                        @error('max_participants')
                         <span class="invalid-feedback" role="alert">
                             <strong>{{ $message }}</strong>
                         </span>
-                        @enderror -->
+                        @enderror
                     </div>
 
                     <div class="form-group row">
@@ -205,11 +205,11 @@
                             <input style="flex: .95;" id="price" min=0 max=9999 step='0.01' placeholder='0.00' type="number" class="form-control @error('price') is-invalid @enderror" name="price" value="{{ Request::get('price') ?? old('price') ?? $event->price }}"  autocomplete="price" autofocus>
                         </div>
 
-                        <!-- @error('price')
+                        @error('price')
                         <span class="invalid-feedback" role="alert">
                             <strong>{{ $message }}</strong>
                         </span>
-                        @enderror -->
+                        @enderror
                     </div>
 
                     <div class="form-group row mt-4">
@@ -221,11 +221,11 @@
                           <option value="3" {{ ($event->active == 3) ? "selected" : "" }}>Event over</option>
                       </select>
 
-                      <!-- @error('active')
+                      @error('active')
                       <span class="invalid-feedback" role="alert">
                         <strong>{{ $message }}</strong>
                     </span>
-                    @enderror -->
+                    @enderror
 
                 </div>
 
@@ -240,11 +240,11 @@
 
                     <input id="main_img" type="text" class="form-control @error('main_img') is-invalid @enderror" name="main_img" value="{{ Request::get('main_img') ?? old('main_img') ?? $gallery[0] }}"  autocomplete="main_img" autofocus>
 
-                    <!-- @error('main_img')
+                    @error('main_img')
                     <span class="invalid-feedback" role="alert">
                         <strong>{{ $message }}</strong>
                     </span>
-                    @enderror -->
+                    @enderror
                 </div>
 
                 <div class="form-group row">
@@ -254,11 +254,11 @@
 
                     <input id="img_1" type="text" class="form-control @error('img_1') is-invalid @enderror" name="img_1" value="{{ Request::get('img_1') ?? old('img_1') ?? $gallery[1] }}"  autocomplete="img_1" autofocus>
 
-                    <!-- @error('img_1')
+                    @error('img_1')
                     <span class="invalid-feedback" role="alert">
                         <strong>{{ $message }}</strong>
                     </span>
-                    @enderror -->
+                    @enderror
                 </div>
 
                 <div class="form-group row">
@@ -268,11 +268,11 @@
 
                     <input id="img_2" type="text" class="form-control @error('img_2') is-invalid @enderror" name="img_2" value="{{ Request::get('img_2') ?? old('img_2') ?? $gallery[2] }}"  autocomplete="img_2" autofocus>
 
-                    <!-- @error('img_2')
+                    @error('img_2')
                     <span class="invalid-feedback" role="alert">
                         <strong>{{ $message }}</strong>
                     </span>
-                    @enderror -->
+                    @enderror
                 </div>
 
                 <div class="form-group row">
@@ -282,11 +282,11 @@
 
                     <input id="img_3" type="text" class="form-control @error('img_3') is-invalid @enderror" name="img_3" value="{{ Request::get('img_3') ?? old('img_3') ?? $gallery[3] }}"  autocomplete="img_3" autofocus>
 
-                   <!--  @error('img_3')
+                    @error('img_3')
                     <span class="invalid-feedback" role="alert">
                         <strong>{{ $message }}</strong>
                     </span>
-                    @enderror -->
+                    @enderror
                 </div>
 
                 <div class="form-group row">
@@ -296,11 +296,11 @@
 
                     <input id="img_4" type="text" class="form-control @error('img_4') is-invalid @enderror" name="img_4" value="{{ Request::get('img_4') ?? old('img_4') ?? $gallery[4] }}"  autocomplete="img_4" autofocus>
 
-                    <!-- @error('img_4')
+                    @error('img_4')
                     <span class="invalid-feedback" role="alert">
                         <strong>{{ $message }}</strong>
                     </span>
-                    @enderror -->
+                    @enderror
                 </div>
 
                 <div class="form-group row">
@@ -310,11 +310,11 @@
 
                     <input id="img_5" type="text" class="form-control @error('img_5') is-invalid @enderror" name="img_5" value="{{ Request::get('img_5') ?? old('img_5') ?? $gallery[5] }}"  autocomplete="img_5" autofocus>
 
-                    <!-- @error('img_5')
+                    @error('img_5')
                     <span class="invalid-feedback" role="alert">
                         <strong>{{ $message }}</strong>
                     </span>
-                    @enderror -->
+                    @enderror
                 </div>
 
                 <div class="form-group row">
@@ -324,11 +324,11 @@
 
                     <input id="img_6" type="text" class="form-control @error('img_6') is-invalid @enderror" name="img_6" value="{{ Request::get('img_6') ?? old('img_6') ?? $gallery[6] }}"  autocomplete="img_6" autofocus>
 
-                   <!--  @error('img_6')
+                    @error('img_6')
                     <span class="invalid-feedback" role="alert">
                         <strong>{{ $message }}</strong>
                     </span>
-                    @enderror -->
+                    @enderror
                 </div>
 
 
