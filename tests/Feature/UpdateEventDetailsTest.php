@@ -2,6 +2,7 @@
 
 namespace Tests\Feature;
 
+use App\User;
 use Illuminate\Foundation\Testing\RefreshDatabase;
 use Tests\TestCase;
 // use Illuminate\Support\MessageBag;
@@ -40,4 +41,5 @@ class UpdateEventDetailsTest extends TestCase
 
         $response->assertStatus(200);
     }
+
 }
