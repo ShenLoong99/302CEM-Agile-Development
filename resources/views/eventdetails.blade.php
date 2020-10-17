@@ -74,6 +74,7 @@
                     <div class="col-xl-12">
                         <div class="hero-cap text-center">
                             <h2>Event Details</h2>
+                            <p class="msg text-success h3">{{ session('msg') }}</p>
                         </div>
                     </div>
                 </div>
@@ -84,10 +85,10 @@
     <!--? About Law Start-->
     <form action="/e/eventdetails/{{$event -> id}}" method="POST">
         @csrf
-        @method('DELETE')
-        <button class="btn mt-50" style="margin-right: 50px; float: right; background-color:#C70039 ;" onclick="return confirm('Are you sure you want to delete this event?')">
-        Delete Event
-        </button>
+            @method('DELETE')
+            <button class="btn mt-50" style="margin-right: 50px; float: right; background-color:#C70039 ;" onclick="return confirm('Are you sure you want to delete this event?')">
+                Delete Event
+            </button>
     </form>
 
 
@@ -95,7 +96,6 @@
         <div class="container">
             <div class="row">
                 <div class="col-lg-6 col-md-12">
-
                     <div class="about-caption mb-50" style="text-align: justify;">
                         <!-- Section Tittle -->
                         <div class="section-tittle mb-35">
@@ -146,10 +146,7 @@
                             </div>
                         </div>
                         <div class="col-lg-6 col-md-6 col-sm-6 col-xs-10">
-                       
-                        
                                 <div class="caption">
-                                   
                                     <h5> 
                                         <img src="https://www.flaticon.com/svg/static/icons/svg/2088/2088617.svg" width="25" height="25"> &nbsp;Start Date
                                     </h5>
@@ -175,10 +172,21 @@
                                         RM{{$event -> price}}
                                     </p>
                                 </div>
-                           
                         </div>
                     </div>
-                    <a href={{ url('edit/'. $event->id) }} class="btn mt-50">Edit Event</a>
+                    @guest 
+                        <a href={{ url('/login') }} class="btn mt-50">Book Event!</a>
+                    @else
+                        @if (!isset($booking->book_ID) || empty($booking->book_ID))
+                            <form name="booking_form" action="/eventdetails/{{$event->id}}" method="post">
+                                @csrf
+                                <button name="submit" type="submit" class="btn mt-50">Book Event!</button>
+                            </form>
+                        @else 
+                            <button name="submit" disabled class="btn mt-50">Event Booked!</button>
+                        @endif
+                    @endguest
+                    <!-- <a href={{ url('edit/'. $event->id) }} class="btn mt-50">Edit Event</a> -->
                 </div>
                 <div class="col-lg-6 col-md-12">
                     <!-- about-img -->

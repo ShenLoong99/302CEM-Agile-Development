@@ -13,9 +13,11 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
+// Sky part
 Route::get('/', 'App\Http\Controllers\EventController@home');
 Route::get('/insert_event', 'App\Http\Controllers\EventController@insert');
 Route::post('/insert_event', 'App\Http\Controllers\EventController@store');
+Route::post('/eventdetails/{event}', 'App\Http\Controllers\EventController@book');
 // Wayne part
 Route::get('/edit/{event}', 'App\Http\Controllers\EventController@edit');
 Route::get('/update/{event}', 'App\Http\Controllers\EventController@update');
@@ -25,3 +27,7 @@ Route::delete('/eventdetails/{event}', 'App\Http\Controllers\EventController@des
 //Khai Shian part
 Route::get('/view_event', 'App\Http\Controllers\EventController@view_event');
 Route::get('/admin_event', 'App\Http\Controllers\EventController@event');
+
+Auth::routes();
+
+Route::get('/home', 'App\Http\Controllers\EventController@home');
