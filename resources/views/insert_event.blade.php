@@ -82,16 +82,16 @@
         </div>
         <!-- Hero End -->
         <div class="m-5 p-5">
-            <form name="insert_form" action="/insert_event" method="post">
+            <form name="insert_form" action="/insert_event" enctype="multipart/form-data" method="post">
                 @csrf 
                 <!-- ^^ - this above allows to cross over to another page when redirect -->
                 <div>
                     <p>Event Name: </p>
-                    <input type="text" name="name" maxlength="255" placeholder="Event Name" title="Enter event name" class="form-control" automcomplete="off" required />
+                    <input type="text" name="name" value="{{ Request::get('name') ?? old('name') ?? '' }}" maxlength="255" placeholder="Event Name" title="Enter event name" class="form-control" automcomplete="off" required />
                 </div>
                 <div>
                     <p>Event Description: </p>
-                    <textarea name="desc" class="form-control" maxlength="255" placeholder="Description of the event" title="Enter description of the event" rows="4" cols="50"></textarea>
+                    <textarea name="desc" value="{{ Request::get('desc') ?? old('desc') ?? '' }}" class="form-control" maxlength="255" placeholder="Description of the event" title="Enter description of the event" rows="4" cols="50"></textarea>
                 </div>
                 <div class="row">
                     <div class="col-6">
@@ -106,58 +106,103 @@
                     </div><br><br>
                     <div class="col-6">
                         <p>Event Location: </p>
-                        <input type="text" name="venue" placeholder="Event Location/Venue" title="Enter event location/venue" class="form-control" automcomplete="off" required />
+                        <input type="text" name="venue" maxlength="255" value="{{ Request::get('venue') ?? old('venue') ?? '' }}" placeholder="Event Location/Venue" title="Enter event location/venue" class="form-control" automcomplete="off" required />
                     </div>
                 </div>
                 
                 <div class="row">
                     <div class="col-6">
                         <p>Event Start Date & Time: </p>
-                        <input type="datetime-local" title="Event Start Date & Time" name="start" class="form-control" style="width: 250px" required />
+                        <input type="datetime-local" title="Event Start Date & Time" value="{{ Request::get('start') ?? old('start') ?? '' }}" name="start" class="form-control" style="width: 250px" required />
+                        @error('start')
+                            <span class="invalid-feedback" role="alert">
+                                <strong>{{ $message }}</strong>
+                            </span>
+                        @enderror
                     </div>
                     <div class="col-6">
                         <p>Event End Date & Time: </p>
-                        <input type="datetime-local" title="Event End Date & Time" name="end" class="form-control" style="width: 250px" required />
+                        <input type="datetime-local" title="Event End Date & Time" value="{{ Request::get('end') ?? old('end') ?? '' }}" name="end" class="form-control" style="width: 250px" required />
+                        @error('end')
+                            <span class="invalid-feedback" role="alert">
+                                <strong>{{ $message }}</strong>
+                            </span>
+                        @enderror
                     </div>
                 </div>
                 <div class="row">
                     <div class="col-6">
                         <p>Max Participant: </p>
-                        <input type="number" style="width: 200px" placeholder="Set Max Participants" title="Enter maximum participants" name="max" class="form-control" min="40" max="3000" required />
+                        <input type="number" style="width: 200px" value="{{ Request::get('max') ?? old('max') ?? '' }}" placeholder="Set Max Participants" title="Enter maximum participants" name="max" class="form-control" min="40" max="3000" required />
                     </div>
                     <div class="col-6">
                         <p>Event Pricing</p>
-                        <input type="text" name="price" class="form-control" placeholder="Event Price (RM)" pattern="[0-9]+(\\.[0-9][0-9]?)?" autocomplete="off" required />
+                        <input type="number" style="width: 200px" value="{{ Request::get('price') ?? old('price') ?? '' }}" placeholder="Set Event Price" title="Enter Event Price" name="price" class="form-control" min="0" required />
                     </div>
                 </div><br>
                 <h3>Insert New Images</h3>
                 <div>
                     <p>Main Image: </p>
-                    <input type="text" name="main_img" placeholder="Insert image URL" title="Make sure you have enter valid image URL, social media image URL are not advisable" class="form-control" maxlength="1000" automcomplete="off" required />
+                    <input type="text" name="main_img" placeholder="Insert image URL" value="{{ Request::get('main_img') ?? old('main_img') ?? '' }}" title="Make sure you have enter valid image URL, social media image URL are not advisable" class="form-control" maxlength="1000" automcomplete="off" required />
+                    @error('main-img')
+                        <span class="invalid-feedback" role="alert">
+                            <strong>{{ $message }}</strong>
+                        </span>
+                    @enderror
                 </div>
                 <div>
                     <p>Gallery Images (1): </p>
-                    <input type="text" name="img_1" placeholder="Insert image URL" title="Make sure you have enter valid image URL, social media image URL are not advisable" class="form-control" maxlength="1000" automcomplete="off" required />
+                    <input type="text" name="img_1" placeholder="Insert image URL" value="{{ Request::get('img_1') ?? old('img_1') ?? '' }}" title="Make sure you have enter valid image URL, social media image URL are not advisable" class="form-control" maxlength="1000" automcomplete="off" required />
+                    @error('img_1')
+                        <span class="invalid-feedback" role="alert">
+                            <strong>{{ $message }}</strong>
+                        </span>
+                    @enderror
                 </div>
                 <div>
                     <p>Gallery Images (2): </p>
-                    <input type="text" name="img_2" placeholder="Insert image URL" title="Make sure you have enter valid image URL, social media image URL are not advisable" class="form-control" maxlength="1000" automcomplete="off" required />
+                    <input type="text" name="img_2" placeholder="Insert image URL" value="{{ Request::get('img_2') ?? old('img_2') ?? '' }}" title="Make sure you have enter valid image URL, social media image URL are not advisable" class="form-control" maxlength="1000" automcomplete="off" required />
+                    @error('img_2')
+                        <span class="invalid-feedback" role="alert">
+                            <strong>{{ $message }}</strong>
+                        </span>
+                    @enderror
                 </div>
                 <div>
                     <p>Gallery Images (3): </p>
-                    <input type="text" name="img_3" placeholder="Insert image URL" title="Make sure you have enter valid image URL, social media image URL are not advisable" class="form-control" maxlength="1000" automcomplete="off" required />
+                    <input type="text" name="img_3" placeholder="Insert image URL" value="{{ Request::get('img_3') ?? old('img_3') ?? '' }}" title="Make sure you have enter valid image URL, social media image URL are not advisable" class="form-control" maxlength="1000" automcomplete="off" required />
+                    @error('img_3')
+                        <span class="invalid-feedback" role="alert">
+                            <strong>{{ $message }}</strong>
+                        </span>
+                    @enderror
                 </div>
                 <div>
                     <p>Gallery Images (4): </p>
-                    <input type="text" name="img_4" placeholder="Insert image URL" title="Make sure you have enter valid image URL, social media image URL are not advisable" class="form-control" maxlength="1000" automcomplete="off" required />
+                    <input type="text" name="img_4" placeholder="Insert image URL" value="{{ Request::get('img_4') ?? old('img_4') ?? '' }}" title="Make sure you have enter valid image URL, social media image URL are not advisable" class="form-control" maxlength="1000" automcomplete="off" required />
+                    @error('img_4')
+                        <span class="invalid-feedback" role="alert">
+                            <strong>{{ $message }}</strong>
+                        </span>
+                    @enderror
                 </div>
                 <div>
                     <p>Gallery Images (5): </p>
-                    <input type="text" name="img_5" placeholder="Insert image URL" title="Make sure you have enter valid image URL, social media image URL are not advisable" class="form-control" maxlength="1000" automcomplete="off" required />
+                    <input type="text" name="img_5" placeholder="Insert image URL" value="{{ Request::get('img_5') ?? old('img_5') ?? '' }}" title="Make sure you have enter valid image URL, social media image URL are not advisable" class="form-control" maxlength="1000" automcomplete="off" required />
+                    @error('img_5')
+                        <span class="invalid-feedback" role="alert">
+                            <strong>{{ $message }}</strong>
+                        </span>
+                    @enderror
                 </div>
                 <div>
                     <p>Gallery Images (6): </p>
-                    <input type="text" name="img_6" placeholder="Insert image URL" title="Make sure you have enter valid image URL, social media image URL are not advisable" class="form-control" maxlength="1000" automcomplete="off" required />
+                    <input type="text" name="img_6" placeholder="Insert image URL" value="{{ Request::get('img_6') ?? old('img_6') ?? '' }}" title="Make sure you have enter valid image URL, social media image URL are not advisable" class="form-control" maxlength="1000" automcomplete="off" required />
+                    @error('img_6')
+                        <span class="invalid-feedback" role="alert">
+                            <strong>{{ $message }}</strong>
+                        </span>
+                    @enderror
                 </div>
                 <button name="submit" type="submit" class="btn mt-50">Insert New Event!</button>
             </form>
