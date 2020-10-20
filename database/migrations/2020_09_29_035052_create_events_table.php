@@ -26,7 +26,7 @@ class CreateEventsTable extends Migration
             $table->unsignedBigInteger('admin_id');
             $table->unsignedBigInteger('active');
             $table->timestamps();
-        });
+        }); 
     }
 
     /**
