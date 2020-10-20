@@ -66,10 +66,7 @@
                                             </ul>
                                         </li>
                                         <li><a href="contact.html">Contact</a></li>
-                                    </ul>
-                                </nav>
-                            </div>
-                             @guest
+                                          @guest
                             <li class="nav-item">
                                 <a class="nav-link" href="{{ route('login') }}">{{ __('Login') }}</a>
                             </li>
@@ -96,6 +93,10 @@
                             </form>
                         </div>
                         @endguest
+                                    </ul>
+                                </nav>
+                            </div>
+                           
                         </div>
                     </div>   
                     <!-- Mobile Menu -->

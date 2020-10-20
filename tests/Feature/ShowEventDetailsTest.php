@@ -19,3 +19,5 @@ class ShowEventDetailsTest extends TestCase
         $response->assertStatus(200);
     }
 }
+
+?>
