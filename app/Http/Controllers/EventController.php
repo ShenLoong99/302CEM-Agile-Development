@@ -224,6 +224,21 @@ class EventController extends Controller
             $image = Gallery::where('ev_ID', $value["id"])->where('main', 1)->first();
 			$value["image"] = $image["image"];
         }
-        return view('event', ['event' => $events, 'image' => $image]);
+        return view('event', ['event' => $events]);
+	}
+	
+	public function registered_event() {
+		$id = Auth::id();
+		$reg = Booking_List::where('mem_ID', $id)->get();
+		foreach ($reg as $value) {
+			$event = Event::where('id', $value["ev_ID"])->first();
+			$value["ev_name"] = $event["ev_name"];
+			$value["description"] = $event["description"];
+			$value["date_time_start"] = $event["date_time_start"];
+			$value["date_time_end"] = $event["date_time_end"];
+			$image = Gallery::where('ev_ID', $value["ev_ID"])->where('main', 1)->first();
+			$value["image"] = $image["image"];
+		}
+		return view('registeredevent', [ 'events' => $reg ]);
     }
 }
