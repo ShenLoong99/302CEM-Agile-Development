@@ -80,12 +80,21 @@ class EventController extends Controller
 		return true;
 	}
 	
-	public function book($event_id) {
+	public function book(Request $request, $event_id) {
 		$booking = new Booking_List();
-		$booking->mem_ID = Auth::id();
+		$id = Auth::id();
+		$data = request()->validate([
+			'id' => 'required|numeric',
+			'qty' => 'required|numeric|min:1|max:10'
+		]);
+		if (!empty($request->get('id'))) { $id = $request->get('id'); } 
+		else { $id = Auth::id(); }
+		$booking->mem_ID = $id;
+		$booking->quantity = $request->get('qty');
 		$booking->ev_ID = $event_id;
 		$booking->save(); // save booking details to booking_list table
 		return redirect('/eventdetails/'.$event_id)->with('msg', 'Event is booked');
+		// return true; // for testing use
 	}
 
     ///////////////////////////////////////////////////////////////////////////////////////////////
@@ -181,8 +190,12 @@ class EventController extends Controller
     public function show($event_id) {
 		// $events = Event::all()->toArray();
 		$event = Event::findOrFail($event_id);
-		$id = Auth::id();
-		$booking = Booking_List::where('ev_ID', $event_id)->where('mem_ID', $id)->first();
+		$booking = Booking_List::where('ev_ID', $event_id)->get();
+		$remain = 0;
+		foreach ($booking as $val) {
+			$remain += $val["quantity"];
+			error_log($val["quantity"]);
+		}
 		// $gallery_first = Gallery::where('ev_ID', $event_id)->first();
 		// $event["image"] = $gallery_first["image"];
 		
@@ -200,7 +213,7 @@ class EventController extends Controller
 				// $gallery_filtered["sub"] == $value['image'];
 			}
 		}
-		return view('eventdetails', ['event' => $event, 'gallery' => $gallery_filtered, 'booking' => $booking]);
+		return view('eventdetails', ['event' => $event, 'gallery' => $gallery_filtered, 'available' => $remain]);
     }
     
     public function destroy($event_id){
