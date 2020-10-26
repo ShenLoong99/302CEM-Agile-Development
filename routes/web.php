@@ -29,6 +29,7 @@ Route::get('/view_event', 'App\Http\Controllers\EventController@view_event');
 Route::get('/admin_event', 'App\Http\Controllers\EventController@event');
 Route::get('/registered_event', 'App\Http\Controllers\EventController@registered_event');
 
+
 Auth::routes();
 
 Route::get('/home', 'App\Http\Controllers\EventController@home');
