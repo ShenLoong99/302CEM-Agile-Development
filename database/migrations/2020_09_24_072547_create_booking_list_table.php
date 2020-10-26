@@ -17,6 +17,7 @@ class CreateBookingListTable extends Migration
             $table->id('book_ID');
             $table->unsignedBigInteger('mem_ID');
             $table->unsignedBigInteger('ev_ID');
+            $table->unsignedBigInteger('quantity');
             $table->timestamps();
         });
     }

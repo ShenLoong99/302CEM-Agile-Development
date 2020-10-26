@@ -50,9 +50,37 @@
                                     </ul>
                                 </nav>
                             </div>
-                            <div class="header-right-btn f-right d-none d-lg-block ml-30">
-                                <a href="#" class="btn header-btn">Login / Register</a>
-                            </div>
+                            <div>
+                                    <!-- Right Side Of Navbar -->
+                                    <ul class="navbar-nav ml-auto">
+                                        <!-- Authentication Links -->
+                                        @guest
+                                        <li class="nav-item">
+                                            <a class="btn header-btn" href="{{ route('login') }}">{{ __('Login / Register') }}</a>
+                                           <!--  @if (Route::has('register'))
+                                            <a style="color: black; display: inline-block;" class="nav-link" href="{{ route('register') }}">{{ __(' / Register') }}</a> -->
+                                        </li>
+                                        @endif
+                                        @else
+                                        <li class="nav-item dropdown">
+                                            <a style="color: #112957; font-family: 'Sen',sans-serif;" id="navbarDropdown" class="nav-link dropdown-toggle ml-4" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
+                                                {{ Auth::user()->name }}
+                                            </a>
+
+                                            <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
+                                                <a class="dropdown-item" href="{{ route('logout') }}"
+                                                onclick="event.preventDefault();
+                                                document.getElementById('logout-form').submit();">
+                                                {{ __('Logout') }}
+                                            </a>
+
+                                            <form id="logout-form" action="{{ route('logout') }}" method="POST" class="d-none">
+                                                @csrf
+                                            </form>
+                                        </div>
+                                    </li>
+                                    @endguest
+                                </div>
                         </div>
                     </div>   
                     <!-- Mobile Menu -->
@@ -175,15 +203,21 @@
                         </div>
                     </div>
                     @guest 
-                        <a href={{ url('/login') }} class="btn mt-50">Book Event!</a>
+                        <a href={{ url('/login') }} class="btn mt-50">Login to Book!</a>
                     @else
-                        @if (!isset($booking->book_ID) || empty($booking->book_ID))
+                        @if ($available < $event->max_participants)
                             <form name="booking_form" action="/eventdetails/{{$event->id}}" method="post">
                                 @csrf
-                                <button name="submit" type="submit" class="btn mt-50">Book Event!</button>
+                                <p>Tickets Available: {{ $event->max_participants - $available }}</p>
+                                @if ($event->max_participants - $available > 10)
+                                    <input type="number" name="qty" class="form-control form control-lg" min="1" max="10" style="width: 200px" required />
+                                @else
+                                    <input type="number" name="qty" class="form-control form control-lg" min="1" max="{{ $event->max_participants - $available }}" style="width: 200px" required />
+                                @endif
+                                <button name="submit" type="submit" class="btn mt-50">Purchase Ticket!</button>
                             </form>
                         @else 
-                            <button name="submit" disabled class="btn mt-50">Event Booked!</button>
+                            <button name="submit" disabled class="btn mt-50">Sold Out!</button>
                         @endif
                     @endguest
                     <!-- <a href={{ url('edit/'. $event->id) }} class="btn mt-50">Edit Event</a> -->

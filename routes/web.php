@@ -27,6 +27,8 @@ Route::delete('/eventdetails/{event}', 'App\Http\Controllers\EventController@des
 //Khai Shian part
 Route::get('/view_event', 'App\Http\Controllers\EventController@view_event');
 Route::get('/admin_event', 'App\Http\Controllers\EventController@event');
+Route::get('/registered_event', 'App\Http\Controllers\EventController@registered_event');
+
 
 Auth::routes();
 
