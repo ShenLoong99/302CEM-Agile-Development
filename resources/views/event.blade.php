@@ -115,7 +115,6 @@
             @endif
             <div class="card">
                 <a onMouseOver="this.style.filter='brightness(1.3)'"onMouseOut="this.style.filter='brightness(1)'" style="display: inline-block; text-decoration: none; color: inherit; outline: 0;" href="/event_detials/{{$row['id']}}">
-                    <img class="card-img-top" src="{{$row['image']}}" width="100%" height=300 alt="Event pic">
                     <div class="card-body">
                         <h5 class="card-title">{{$row['ev_name']}}</h5>
                         <p class="card-text mb-1">{{$row['description']}}</p>

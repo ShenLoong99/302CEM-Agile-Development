@@ -114,12 +114,13 @@
                <div class="card-deck mt-5 mx-3">
             @endif
             <div class="card">
-                <a onMouseOver="this.style.filter='brightness(1.3)'"onMouseOut="this.style.filter='brightness(1)'" style="display: inline-block; text-decoration: none; color: inherit; outline: 0;" href="/event_detials/{{$row['id']}}">
-                    <img class="card-img-top" src="{{$row['image']}}" width="100%" height=300 alt="Event pic">
+                <a onMouseOver="this.style.filter='brightness(1.3)'"onMouseOut="this.style.filter='brightness(1)'" style="display: inline-block; text-decoration: none; color: inherit; outline: 0;" href="/event_details/1">
+                    <img class="card-img-top" src="{{ $row->image }}" width="100%" height=300 alt="Event pic">
                     <div class="card-body">
-                        <h5 class="card-title">{{$row['ev_name']}}</h5>
-                        <p class="card-text mb-1">{{$row['description']}}</p>
-                        <p class="card-text">{{substr($row['date_time_start'], 0, 16)}} - {{substr($row['date_time_end'], 0, 16)}}</p>
+                        <h5 class="card-title">{{ $row->ev_name }}</h5>
+                        <p class="card-text mb-1">{{ $row->description }}</p>
+                        <p class="card-text mb-1">{{ $row->quantity }}</p>
+                        <p class="card-text">{{ date('d-m-Y h:ia', strtotime($row->date_time_start)) }} - {{ date('d-m-Y h:ia', strtotime($row->date_time_end)) }}</p>
                     </div>
                 </a>
             </div>

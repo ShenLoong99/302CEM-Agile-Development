@@ -21,4 +21,11 @@ Route::get('/view_event', 'App\Http\Controllers\EventListController@view_event')
 
 Route::get('/admin_event', 'App\Http\Controllers\EventListController@event');
 
-Route::get('/registered_event', 'App\Http\Controllers\BookingListController@registered_event');
+Route::get('/registered_event', 'App\Http\Controllers\EventListController@registered_event');
+
+
+
+
+Auth::routes();
+
+Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
