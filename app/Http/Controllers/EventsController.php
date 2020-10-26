@@ -90,7 +90,7 @@ class EventsController extends Controller
 		$gallery->image = $request->get('img_6');
 		$gallery->save();
 
-		// return redirect('/e/edit/1')->with('message','Updated successfully');
-		return true;
+		return redirect('/e/edit/1')->with('message','Updated successfully');
+		// return true;
 	}
 }
