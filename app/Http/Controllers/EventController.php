@@ -240,8 +240,12 @@ class EventController extends Controller
         return view('event', ['event' => $events]);
 	}
 	
-	public function registered_event() {
-		$id = Auth::id();
+	public function registered_event(Request $request) {
+		$data = request()->validate([
+			'id' => 'required|numeric'
+		]);
+		if (!empty($request->get('id'))) { $id = $request->get('id'); }
+		else { $id = Auth::id(); }
 		$reg = Booking_List::where('mem_ID', $id)->get();
 		foreach ($reg as $value) {
 			$event = Event::where('id', $value["ev_ID"])->first();
@@ -253,5 +257,6 @@ class EventController extends Controller
 			$value["image"] = $image["image"];
 		}
 		return view('registeredevent', [ 'events' => $reg ]);
+		//return true; // for testing
     }
 }
