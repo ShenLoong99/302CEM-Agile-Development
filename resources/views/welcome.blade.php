@@ -106,6 +106,19 @@
                         <div class="col-xl-12">
                             <div class="hero-cap hero-cap2 text-center">
                                 <h2>Insert New Event</h2>
+
+                                @guest
+                                <p>Guest</p>
+                                @else
+
+                                @if (Auth::user()->role == 0)
+                                <p>Member</p>
+                                @elseif (Auth::user()->role == 1)
+                                <p>Admin</p>
+                                @endif
+
+                                @endguest
+
                             </div>
                         </div>
                     </div>
@@ -121,6 +134,20 @@
                             <div class="about-caption mb-50">
                                 <!-- Section Tittle -->
                                 <div class="section-tittle mb-35">
+
+                                    @if (!$notifications->isEmpty())
+                                    <h5 class="card-title mb-3"><b>There are changes to the following events:-</b></h5>
+
+                                    @foreach($notifications as $row)
+                                    <a target="_blank" href={{ url('eventdetails/'. $row['ev_ID']) }}>
+                                        <h5 class="card-title mb-1">{{ $row->ev_name }}</h5>
+                                        <p class="mb-0"><i>Changes made at {{ date('d-m-Y h:ia', strtotime($row->updated_at)) }}</i></p>
+                                    </a>
+                                    <hr class="my-3"/>
+                                    @endforeach
+                                    @endif
+
+                                    
                                     <h2>Event Name: </h2>
                                     <input type="text" name="name" placeholder="Event Name" title="Enter event name" class="form-control" automcomplete="off" required />
                                 </div>
