@@ -112,6 +112,7 @@ class EventController extends Controller
 		return true;
 	}
 	
+
 	public function book(Request $request, $event_id) {
 		$booking = new Booking_List();
 		$id = Auth::id();

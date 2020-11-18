@@ -191,7 +191,8 @@ Did you mean this?
 "} 
 [2020-10-14 07:32:08] local.ERROR: In order to use the Auth::routes() method, please install the laravel/ui package. {"exception":"[object] (RuntimeException(code: 0): In order to use the Auth::routes() method, please install the laravel/ui package. at C:\\Users\\Asus\\Desktop\\Agile-Development\\vendor\\laravel\\framework\\src\\Illuminate\\Support\\Facades\\Auth.php:56)
 [stacktrace]
-#0 C:\\Users\\Asus\\Desktop\\Agile-Development\outes\\web.php(16): Illuminate\\Support\\Facades\\Auth::routes()
+#0 C:\\Users\\Asus\\Desktop\\Agile-Development\
+outes\\web.php(16): Illuminate\\Support\\Facades\\Auth::routes()
 #1 C:\\Users\\Asus\\Desktop\\Agile-Development\\vendor\\laravel\\framework\\src\\Illuminate\\Routing\\RouteFileRegistrar.php(35): require('C:\\\\Users\\\\Asus\\\\D...')
 #2 C:\\Users\\Asus\\Desktop\\Agile-Development\\vendor\\laravel\\framework\\src\\Illuminate\\Routing\\Router.php(423): Illuminate\\Routing\\RouteFileRegistrar->register('C:\\\\Users\\\\Asus\\\\D...')
 #3 C:\\Users\\Asus\\Desktop\\Agile-Development\\vendor\\laravel\\framework\\src\\Illuminate\\Routing\\Router.php(380): Illuminate\\Routing\\Router->loadRoutes('C:\\\\Users\\\\Asus\\\\D...')
@@ -406,11 +407,13 @@ Did you mean one of these?
 #4 C:\\Users\\Asus\\Desktop\\Agile-Development\\artisan(37): Illuminate\\Foundation\\Console\\Kernel->handle(Object(Symfony\\Component\\Console\\Input\\ArgvInput), Object(Symfony\\Component\\Console\\Output\\ConsoleOutput))
 #5 {main}
 "} 
-[2020-10-14 07:51:17] local.ERROR: View [layouts.js] not found. (View: C:\Users\Asus\Desktop\Agile-Development\resources\views\auth\login.blade.php) {"exception":"[object] (Facade\\Ignition\\Exceptions\\ViewException(code: 0): View [layouts.js] not found. (View: C:\\Users\\Asus\\Desktop\\Agile-Development\esources\\views\\auth\\login.blade.php) at C:\\Users\\Asus\\Desktop\\Agile-Development\\vendor\\laravel\\framework\\src\\Illuminate\\View\\FileViewFinder.php:137)
+[2020-10-14 07:51:17] local.ERROR: View [layouts.js] not found. (View: C:\Users\Asus\Desktop\Agile-Development\resources\views\auth\login.blade.php) {"exception":"[object] (Facade\\Ignition\\Exceptions\\ViewException(code: 0): View [layouts.js] not found. (View: C:\\Users\\Asus\\Desktop\\Agile-Development\
+esources\\views\\auth\\login.blade.php) at C:\\Users\\Asus\\Desktop\\Agile-Development\\vendor\\laravel\\framework\\src\\Illuminate\\View\\FileViewFinder.php:137)
 [stacktrace]
 #0 C:\\Users\\Asus\\Desktop\\Agile-Development\\vendor\\laravel\\framework\\src\\Illuminate\\View\\FileViewFinder.php(79): Illuminate\\View\\FileViewFinder->findInPaths('layouts.js', Array)
 #1 C:\\Users\\Asus\\Desktop\\Agile-Development\\vendor\\laravel\\framework\\src\\Illuminate\\View\\Factory.php(138): Illuminate\\View\\FileViewFinder->find('layouts.js')
-#2 C:\\Users\\Asus\\Desktop\\Agile-Development\esources\\views/auth/login.blade.php(189): Illuminate\\View\\Factory->make('layouts.js', Array)
+#2 C:\\Users\\Asus\\Desktop\\Agile-Development\
+esources\\views/auth/login.blade.php(189): Illuminate\\View\\Factory->make('layouts.js', Array)
 #3 C:\\Users\\Asus\\Desktop\\Agile-Development\\vendor\\laravel\\framework\\src\\Illuminate\\Filesystem\\Filesystem.php(107): require('C:\\\\Users\\\\Asus\\\\D...')
 #4 C:\\Users\\Asus\\Desktop\\Agile-Development\\vendor\\laravel\\framework\\src\\Illuminate\\Filesystem\\Filesystem.php(108): Illuminate\\Filesystem\\Filesystem::Illuminate\\Filesystem\\{closure}()
 #5 C:\\Users\\Asus\\Desktop\\Agile-Development\\vendor\\laravel\\framework\\src\\Illuminate\\View\\Engines\\PhpEngine.php(58): Illuminate\\Filesystem\\Filesystem->getRequire('C:\\\\Users\\\\Asus\\\\D...', Array)
@@ -526,9 +529,12 @@ Did you mean one of these?
 #55 C:\\Users\\Asus\\Desktop\\Agile-Development\\server.php(21): require_once('C:\\\\Users\\\\Asus\\\\D...')
 #56 {main}
 "} 
-[2020-10-14 07:54:40] local.ERROR: Undefined variable: highlight (View: C:\Users\Asus\Desktop\Agile-Development\resources\views\home.blade.php) {"userId":1,"exception":"[object] (Facade\\Ignition\\Exceptions\\ViewException(code: 0): Undefined variable: highlight (View: C:\\Users\\Asus\\Desktop\\Agile-Development\esources\\views\\home.blade.php) at C:\\Users\\Asus\\Desktop\\Agile-Development\esources\\views/home.blade.php:82)
+[2020-10-14 07:54:40] local.ERROR: Undefined variable: highlight (View: C:\Users\Asus\Desktop\Agile-Development\resources\views\home.blade.php) {"userId":1,"exception":"[object] (Facade\\Ignition\\Exceptions\\ViewException(code: 0): Undefined variable: highlight (View: C:\\Users\\Asus\\Desktop\\Agile-Development\
+esources\\views\\home.blade.php) at C:\\Users\\Asus\\Desktop\\Agile-Development\
+esources\\views/home.blade.php:82)
 [stacktrace]
-#0 C:\\Users\\Asus\\Desktop\\Agile-Development\esources\\views/home.blade.php(82): Illuminate\\Foundation\\Bootstrap\\HandleExceptions->handleError(8, 'Undefined varia...', 'C:\\\\Users\\\\Asus\\\\D...', 82, Array)
+#0 C:\\Users\\Asus\\Desktop\\Agile-Development\
+esources\\views/home.blade.php(82): Illuminate\\Foundation\\Bootstrap\\HandleExceptions->handleError(8, 'Undefined varia...', 'C:\\\\Users\\\\Asus\\\\D...', 82, Array)
 #1 C:\\Users\\Asus\\Desktop\\Agile-Development\\vendor\\laravel\\framework\\src\\Illuminate\\Filesystem\\Filesystem.php(107): require('C:\\\\Users\\\\Asus\\\\D...')
 #2 C:\\Users\\Asus\\Desktop\\Agile-Development\\vendor\\laravel\\framework\\src\\Illuminate\\Filesystem\\Filesystem.php(108): Illuminate\\Filesystem\\Filesystem::Illuminate\\Filesystem\\{closure}()
 #3 C:\\Users\\Asus\\Desktop\\Agile-Development\\vendor\\laravel\\framework\\src\\Illuminate\\View\\Engines\\PhpEngine.php(58): Illuminate\\Filesystem\\Filesystem->getRequire('C:\\\\Users\\\\Asus\\\\D...', Array)
@@ -713,7 +719,9 @@ Did you mean one of these?
 #66 C:\\Users\\Asus\\Desktop\\Agile-Development\\server.php(21): require_once('C:\\\\Users\\\\Asus\\\\D...')
 #67 {main}
 "} 
-[2020-10-14 08:23:05] local.ERROR: syntax error, unexpected 'else' (T_ELSE), expecting end of file (View: C:\Users\Asus\Desktop\Agile-Development\resources\views\eventdetails.blade.php) {"exception":"[object] (Facade\\Ignition\\Exceptions\\ViewException(code: 0): syntax error, unexpected 'else' (T_ELSE), expecting end of file (View: C:\\Users\\Asus\\Desktop\\Agile-Development\esources\\views\\eventdetails.blade.php) at C:\\Users\\Asus\\Desktop\\Agile-Development\esources\\views/eventdetails.blade.php:180)
+[2020-10-14 08:23:05] local.ERROR: syntax error, unexpected 'else' (T_ELSE), expecting end of file (View: C:\Users\Asus\Desktop\Agile-Development\resources\views\eventdetails.blade.php) {"exception":"[object] (Facade\\Ignition\\Exceptions\\ViewException(code: 0): syntax error, unexpected 'else' (T_ELSE), expecting end of file (View: C:\\Users\\Asus\\Desktop\\Agile-Development\
+esources\\views\\eventdetails.blade.php) at C:\\Users\\Asus\\Desktop\\Agile-Development\
+esources\\views/eventdetails.blade.php:180)
 [stacktrace]
 #0 C:\\Users\\Asus\\Desktop\\Agile-Development\\vendor\\laravel\\framework\\src\\Illuminate\\Filesystem\\Filesystem.php(108): Illuminate\\Filesystem\\Filesystem::Illuminate\\Filesystem\\{closure}()
 #1 C:\\Users\\Asus\\Desktop\\Agile-Development\\vendor\\laravel\\framework\\src\\Illuminate\\View\\Engines\\PhpEngine.php(58): Illuminate\\Filesystem\\Filesystem->getRequire('C:\\\\Users\\\\Asus\\\\D...', Array)
@@ -821,7 +829,9 @@ Did you mean one of these?
 #49 C:\\Users\\Asus\\Desktop\\Agile-Development\\server.php(21): require_once('C:\\\\Users\\\\Asus\\\\D...')
 #50 {main}
 "} 
-[2020-10-14 08:50:52] local.ERROR: syntax error, unexpected 'else' (T_ELSE) (View: C:\Users\Asus\Desktop\Agile-Development\resources\views\eventdetails.blade.php) {"userId":1,"exception":"[object] (Facade\\Ignition\\Exceptions\\ViewException(code: 0): syntax error, unexpected 'else' (T_ELSE) (View: C:\\Users\\Asus\\Desktop\\Agile-Development\esources\\views\\eventdetails.blade.php) at C:\\Users\\Asus\\Desktop\\Agile-Development\esources\\views/eventdetails.blade.php:186)
+[2020-10-14 08:50:52] local.ERROR: syntax error, unexpected 'else' (T_ELSE) (View: C:\Users\Asus\Desktop\Agile-Development\resources\views\eventdetails.blade.php) {"userId":1,"exception":"[object] (Facade\\Ignition\\Exceptions\\ViewException(code: 0): syntax error, unexpected 'else' (T_ELSE) (View: C:\\Users\\Asus\\Desktop\\Agile-Development\
+esources\\views\\eventdetails.blade.php) at C:\\Users\\Asus\\Desktop\\Agile-Development\
+esources\\views/eventdetails.blade.php:186)
 [stacktrace]
 #0 C:\\Users\\Asus\\Desktop\\Agile-Development\\vendor\\laravel\\framework\\src\\Illuminate\\Filesystem\\Filesystem.php(108): Illuminate\\Filesystem\\Filesystem::Illuminate\\Filesystem\\{closure}()
 #1 C:\\Users\\Asus\\Desktop\\Agile-Development\\vendor\\laravel\\framework\\src\\Illuminate\\View\\Engines\\PhpEngine.php(58): Illuminate\\Filesystem\\Filesystem->getRequire('C:\\\\Users\\\\Asus\\\\D...', Array)
@@ -980,9 +990,11 @@ Did you mean one of these?
 #46 C:\\Users\\Asus\\Desktop\\Agile-Development\\server.php(21): require_once('C:\\\\Users\\\\Asus\\\\D...')
 #47 {main}
 "} 
-[2020-10-14 09:05:28] local.ERROR: Property [mem_ID] does not exist on this collection instance. (View: C:\Users\Asus\Desktop\Agile-Development\resources\views\eventdetails.blade.php) {"userId":1,"exception":"[object] (Facade\\Ignition\\Exceptions\\ViewException(code: 0): Property [mem_ID] does not exist on this collection instance. (View: C:\\Users\\Asus\\Desktop\\Agile-Development\esources\\views\\eventdetails.blade.php) at C:\\Users\\Asus\\Desktop\\Agile-Development\\vendor\\laravel\\framework\\src\\Illuminate\\Collections\\Traits\\EnumeratesValues.php:861)
+[2020-10-14 09:05:28] local.ERROR: Property [mem_ID] does not exist on this collection instance. (View: C:\Users\Asus\Desktop\Agile-Development\resources\views\eventdetails.blade.php) {"userId":1,"exception":"[object] (Facade\\Ignition\\Exceptions\\ViewException(code: 0): Property [mem_ID] does not exist on this collection instance. (View: C:\\Users\\Asus\\Desktop\\Agile-Development\
+esources\\views\\eventdetails.blade.php) at C:\\Users\\Asus\\Desktop\\Agile-Development\\vendor\\laravel\\framework\\src\\Illuminate\\Collections\\Traits\\EnumeratesValues.php:861)
 [stacktrace]
-#0 C:\\Users\\Asus\\Desktop\\Agile-Development\esources\\views/eventdetails.blade.php(183): Illuminate\\Support\\Collection->__get('mem_ID')
+#0 C:\\Users\\Asus\\Desktop\\Agile-Development\
+esources\\views/eventdetails.blade.php(183): Illuminate\\Support\\Collection->__get('mem_ID')
 #1 C:\\Users\\Asus\\Desktop\\Agile-Development\\vendor\\laravel\\framework\\src\\Illuminate\\Filesystem\\Filesystem.php(107): require('C:\\\\Users\\\\Asus\\\\D...')
 #2 C:\\Users\\Asus\\Desktop\\Agile-Development\\vendor\\laravel\\framework\\src\\Illuminate\\Filesystem\\Filesystem.php(108): Illuminate\\Filesystem\\Filesystem::Illuminate\\Filesystem\\{closure}()
 #3 C:\\Users\\Asus\\Desktop\\Agile-Development\\vendor\\laravel\\framework\\src\\Illuminate\\View\\Engines\\PhpEngine.php(58): Illuminate\\Filesystem\\Filesystem->getRequire('C:\\\\Users\\\\Asus\\\\D...', Array)
@@ -1092,7 +1104,9 @@ Did you mean one of these?
 #51 C:\\Users\\Asus\\Desktop\\Agile-Development\\server.php(21): require_once('C:\\\\Users\\\\Asus\\\\D...')
 #52 {main}
 "} 
-[2020-10-14 09:08:08] local.ERROR: syntax error, unexpected '<' (View: C:\Users\Asus\Desktop\Agile-Development\resources\views\eventdetails.blade.php) {"userId":1,"exception":"[object] (Facade\\Ignition\\Exceptions\\ViewException(code: 0): syntax error, unexpected '<' (View: C:\\Users\\Asus\\Desktop\\Agile-Development\esources\\views\\eventdetails.blade.php) at C:\\Users\\Asus\\Desktop\\Agile-Development\esources\\views/eventdetails.blade.php:180)
+[2020-10-14 09:08:08] local.ERROR: syntax error, unexpected '<' (View: C:\Users\Asus\Desktop\Agile-Development\resources\views\eventdetails.blade.php) {"userId":1,"exception":"[object] (Facade\\Ignition\\Exceptions\\ViewException(code: 0): syntax error, unexpected '<' (View: C:\\Users\\Asus\\Desktop\\Agile-Development\
+esources\\views\\eventdetails.blade.php) at C:\\Users\\Asus\\Desktop\\Agile-Development\
+esources\\views/eventdetails.blade.php:180)
 [stacktrace]
 #0 C:\\Users\\Asus\\Desktop\\Agile-Development\\vendor\\laravel\\framework\\src\\Illuminate\\Filesystem\\Filesystem.php(108): Illuminate\\Filesystem\\Filesystem::Illuminate\\Filesystem\\{closure}()
 #1 C:\\Users\\Asus\\Desktop\\Agile-Development\\vendor\\laravel\\framework\\src\\Illuminate\\View\\Engines\\PhpEngine.php(58): Illuminate\\Filesystem\\Filesystem->getRequire('C:\\\\Users\\\\Asus\\\\D...', Array)
@@ -1200,7 +1214,9 @@ Did you mean one of these?
 #49 C:\\Users\\Asus\\Desktop\\Agile-Development\\server.php(21): require_once('C:\\\\Users\\\\Asus\\\\D...')
 #50 {main}
 "} 
-[2020-10-14 09:08:42] local.ERROR: syntax error, unexpected '<' (View: C:\Users\Asus\Desktop\Agile-Development\resources\views\eventdetails.blade.php) {"userId":1,"exception":"[object] (Facade\\Ignition\\Exceptions\\ViewException(code: 0): syntax error, unexpected '<' (View: C:\\Users\\Asus\\Desktop\\Agile-Development\esources\\views\\eventdetails.blade.php) at C:\\Users\\Asus\\Desktop\\Agile-Development\esources\\views/eventdetails.blade.php:180)
+[2020-10-14 09:08:42] local.ERROR: syntax error, unexpected '<' (View: C:\Users\Asus\Desktop\Agile-Development\resources\views\eventdetails.blade.php) {"userId":1,"exception":"[object] (Facade\\Ignition\\Exceptions\\ViewException(code: 0): syntax error, unexpected '<' (View: C:\\Users\\Asus\\Desktop\\Agile-Development\
+esources\\views\\eventdetails.blade.php) at C:\\Users\\Asus\\Desktop\\Agile-Development\
+esources\\views/eventdetails.blade.php:180)
 [stacktrace]
 #0 C:\\Users\\Asus\\Desktop\\Agile-Development\\vendor\\laravel\\framework\\src\\Illuminate\\Filesystem\\Filesystem.php(108): Illuminate\\Filesystem\\Filesystem::Illuminate\\Filesystem\\{closure}()
 #1 C:\\Users\\Asus\\Desktop\\Agile-Development\\vendor\\laravel\\framework\\src\\Illuminate\\View\\Engines\\PhpEngine.php(58): Illuminate\\Filesystem\\Filesystem->getRequire('C:\\\\Users\\\\Asus\\\\D...', Array)
@@ -1308,7 +1324,9 @@ Did you mean one of these?
 #49 C:\\Users\\Asus\\Desktop\\Agile-Development\\server.php(21): require_once('C:\\\\Users\\\\Asus\\\\D...')
 #50 {main}
 "} 
-[2020-10-14 09:09:03] local.ERROR: syntax error, unexpected '<' (View: C:\Users\Asus\Desktop\Agile-Development\resources\views\eventdetails.blade.php) {"userId":1,"exception":"[object] (Facade\\Ignition\\Exceptions\\ViewException(code: 0): syntax error, unexpected '<' (View: C:\\Users\\Asus\\Desktop\\Agile-Development\esources\\views\\eventdetails.blade.php) at C:\\Users\\Asus\\Desktop\\Agile-Development\esources\\views/eventdetails.blade.php:180)
+[2020-10-14 09:09:03] local.ERROR: syntax error, unexpected '<' (View: C:\Users\Asus\Desktop\Agile-Development\resources\views\eventdetails.blade.php) {"userId":1,"exception":"[object] (Facade\\Ignition\\Exceptions\\ViewException(code: 0): syntax error, unexpected '<' (View: C:\\Users\\Asus\\Desktop\\Agile-Development\
+esources\\views\\eventdetails.blade.php) at C:\\Users\\Asus\\Desktop\\Agile-Development\
+esources\\views/eventdetails.blade.php:180)
 [stacktrace]
 #0 C:\\Users\\Asus\\Desktop\\Agile-Development\\vendor\\laravel\\framework\\src\\Illuminate\\Filesystem\\Filesystem.php(108): Illuminate\\Filesystem\\Filesystem::Illuminate\\Filesystem\\{closure}()
 #1 C:\\Users\\Asus\\Desktop\\Agile-Development\\vendor\\laravel\\framework\\src\\Illuminate\\View\\Engines\\PhpEngine.php(58): Illuminate\\Filesystem\\Filesystem->getRequire('C:\\\\Users\\\\Asus\\\\D...', Array)
@@ -1416,7 +1434,9 @@ Did you mean one of these?
 #49 C:\\Users\\Asus\\Desktop\\Agile-Development\\server.php(21): require_once('C:\\\\Users\\\\Asus\\\\D...')
 #50 {main}
 "} 
-[2020-10-14 09:09:41] local.ERROR: syntax error, unexpected '<' (View: C:\Users\Asus\Desktop\Agile-Development\resources\views\eventdetails.blade.php) {"userId":1,"exception":"[object] (Facade\\Ignition\\Exceptions\\ViewException(code: 0): syntax error, unexpected '<' (View: C:\\Users\\Asus\\Desktop\\Agile-Development\esources\\views\\eventdetails.blade.php) at C:\\Users\\Asus\\Desktop\\Agile-Development\esources\\views/eventdetails.blade.php:180)
+[2020-10-14 09:09:41] local.ERROR: syntax error, unexpected '<' (View: C:\Users\Asus\Desktop\Agile-Development\resources\views\eventdetails.blade.php) {"userId":1,"exception":"[object] (Facade\\Ignition\\Exceptions\\ViewException(code: 0): syntax error, unexpected '<' (View: C:\\Users\\Asus\\Desktop\\Agile-Development\
+esources\\views\\eventdetails.blade.php) at C:\\Users\\Asus\\Desktop\\Agile-Development\
+esources\\views/eventdetails.blade.php:180)
 [stacktrace]
 #0 C:\\Users\\Asus\\Desktop\\Agile-Development\\vendor\\laravel\\framework\\src\\Illuminate\\Filesystem\\Filesystem.php(108): Illuminate\\Filesystem\\Filesystem::Illuminate\\Filesystem\\{closure}()
 #1 C:\\Users\\Asus\\Desktop\\Agile-Development\\vendor\\laravel\\framework\\src\\Illuminate\\View\\Engines\\PhpEngine.php(58): Illuminate\\Filesystem\\Filesystem->getRequire('C:\\\\Users\\\\Asus\\\\D...', Array)
@@ -2357,9 +2377,13 @@ Did you mean one of these?
 #31 C:\\Users\\Asus\\Desktop\\Agile-Development\\server.php(21): require_once('C:\\\\Users\\\\Asus\\\\D...')
 #32 {main}
 "} 
-[2020-10-24 09:09:56] local.ERROR: Trying to get property 'image' of non-object (View: C:\Users\Asus\Desktop\Agile-Development\resources\views\registeredevent.blade.php) {"userId":1,"exception":"[object] (Facade\\Ignition\\Exceptions\\ViewException(code: 0): Trying to get property 'image' of non-object (View: C:\\Users\\Asus\\Desktop\\Agile-Development\esources\\views\egisteredevent.blade.php) at C:\\Users\\Asus\\Desktop\\Agile-Development\esources\\views/registeredevent.blade.php:118)
+[2020-10-24 09:09:56] local.ERROR: Trying to get property 'image' of non-object (View: C:\Users\Asus\Desktop\Agile-Development\resources\views\registeredevent.blade.php) {"userId":1,"exception":"[object] (Facade\\Ignition\\Exceptions\\ViewException(code: 0): Trying to get property 'image' of non-object (View: C:\\Users\\Asus\\Desktop\\Agile-Development\
+esources\\views\
+egisteredevent.blade.php) at C:\\Users\\Asus\\Desktop\\Agile-Development\
+esources\\views/registeredevent.blade.php:118)
 [stacktrace]
-#0 C:\\Users\\Asus\\Desktop\\Agile-Development\esources\\views/registeredevent.blade.php(118): Illuminate\\Foundation\\Bootstrap\\HandleExceptions->handleError(8, 'Trying to get p...', 'C:\\\\Users\\\\Asus\\\\D...', 118, Array)
+#0 C:\\Users\\Asus\\Desktop\\Agile-Development\
+esources\\views/registeredevent.blade.php(118): Illuminate\\Foundation\\Bootstrap\\HandleExceptions->handleError(8, 'Trying to get p...', 'C:\\\\Users\\\\Asus\\\\D...', 118, Array)
 #1 C:\\Users\\Asus\\Desktop\\Agile-Development\\vendor\\laravel\\framework\\src\\Illuminate\\Filesystem\\Filesystem.php(107): require('C:\\\\Users\\\\Asus\\\\D...')
 #2 C:\\Users\\Asus\\Desktop\\Agile-Development\\vendor\\laravel\\framework\\src\\Illuminate\\Filesystem\\Filesystem.php(108): Illuminate\\Filesystem\\Filesystem::Illuminate\\Filesystem\\{closure}()
 #3 C:\\Users\\Asus\\Desktop\\Agile-Development\\vendor\\laravel\\framework\\src\\Illuminate\\View\\Engines\\PhpEngine.php(58): Illuminate\\Filesystem\\Filesystem->getRequire('C:\\\\Users\\\\Asus\\\\D...', Array)
@@ -3498,10 +3522,13 @@ Did you mean one of these?
 #44 C:\\Users\\Asus\\Desktop\\Agile-Development\\server.php(21): require_once('C:\\\\Users\\\\Asus\\\\D...')
 #45 {main}
 "} 
-[2020-10-24 09:29:52] local.ERROR: Undefined index: quantity (View: C:\Users\Asus\Desktop\Agile-Development\resources\views\registeredevent.blade.php) {"userId":1,"exception":"[object] (Facade\\Ignition\\Exceptions\\ViewException(code: 0): Undefined index: quantity (View: C:\\Users\\Asus\\Desktop\\Agile-Development\esources\\views\egisteredevent.blade.php) at C:\\Users\\Asus\\Desktop\\Agile-Development\\vendor\\laravel\\framework\\src\\Illuminate\\Collections\\Collection.php:1367)
+[2020-10-24 09:29:52] local.ERROR: Undefined index: quantity (View: C:\Users\Asus\Desktop\Agile-Development\resources\views\registeredevent.blade.php) {"userId":1,"exception":"[object] (Facade\\Ignition\\Exceptions\\ViewException(code: 0): Undefined index: quantity (View: C:\\Users\\Asus\\Desktop\\Agile-Development\
+esources\\views\
+egisteredevent.blade.php) at C:\\Users\\Asus\\Desktop\\Agile-Development\\vendor\\laravel\\framework\\src\\Illuminate\\Collections\\Collection.php:1367)
 [stacktrace]
 #0 C:\\Users\\Asus\\Desktop\\Agile-Development\\vendor\\laravel\\framework\\src\\Illuminate\\Collections\\Collection.php(1367): Illuminate\\Foundation\\Bootstrap\\HandleExceptions->handleError(8, 'Undefined index...', 'C:\\\\Users\\\\Asus\\\\D...', 1367, Array)
-#1 C:\\Users\\Asus\\Desktop\\Agile-Development\esources\\views/registeredevent.blade.php(122): Illuminate\\Support\\Collection->offsetGet('quantity')
+#1 C:\\Users\\Asus\\Desktop\\Agile-Development\
+esources\\views/registeredevent.blade.php(122): Illuminate\\Support\\Collection->offsetGet('quantity')
 #2 C:\\Users\\Asus\\Desktop\\Agile-Development\\vendor\\laravel\\framework\\src\\Illuminate\\Filesystem\\Filesystem.php(107): require('C:\\\\Users\\\\Asus\\\\D...')
 #3 C:\\Users\\Asus\\Desktop\\Agile-Development\\vendor\\laravel\\framework\\src\\Illuminate\\Filesystem\\Filesystem.php(108): Illuminate\\Filesystem\\Filesystem::Illuminate\\Filesystem\\{closure}()
 #4 C:\\Users\\Asus\\Desktop\\Agile-Development\\vendor\\laravel\\framework\\src\\Illuminate\\View\\Engines\\PhpEngine.php(58): Illuminate\\Filesystem\\Filesystem->getRequire('C:\\\\Users\\\\Asus\\\\D...', Array)
@@ -3612,10 +3639,13 @@ Did you mean one of these?
 #52 C:\\Users\\Asus\\Desktop\\Agile-Development\\server.php(21): require_once('C:\\\\Users\\\\Asus\\\\D...')
 #53 {main}
 "} 
-[2020-10-24 09:30:16] local.ERROR: Undefined index: quantity (View: C:\Users\Asus\Desktop\Agile-Development\resources\views\registeredevent.blade.php) {"userId":1,"exception":"[object] (Facade\\Ignition\\Exceptions\\ViewException(code: 0): Undefined index: quantity (View: C:\\Users\\Asus\\Desktop\\Agile-Development\esources\\views\egisteredevent.blade.php) at C:\\Users\\Asus\\Desktop\\Agile-Development\\vendor\\laravel\\framework\\src\\Illuminate\\Collections\\Collection.php:1367)
+[2020-10-24 09:30:16] local.ERROR: Undefined index: quantity (View: C:\Users\Asus\Desktop\Agile-Development\resources\views\registeredevent.blade.php) {"userId":1,"exception":"[object] (Facade\\Ignition\\Exceptions\\ViewException(code: 0): Undefined index: quantity (View: C:\\Users\\Asus\\Desktop\\Agile-Development\
+esources\\views\
+egisteredevent.blade.php) at C:\\Users\\Asus\\Desktop\\Agile-Development\\vendor\\laravel\\framework\\src\\Illuminate\\Collections\\Collection.php:1367)
 [stacktrace]
 #0 C:\\Users\\Asus\\Desktop\\Agile-Development\\vendor\\laravel\\framework\\src\\Illuminate\\Collections\\Collection.php(1367): Illuminate\\Foundation\\Bootstrap\\HandleExceptions->handleError(8, 'Undefined index...', 'C:\\\\Users\\\\Asus\\\\D...', 1367, Array)
-#1 C:\\Users\\Asus\\Desktop\\Agile-Development\esources\\views/registeredevent.blade.php(122): Illuminate\\Support\\Collection->offsetGet('quantity')
+#1 C:\\Users\\Asus\\Desktop\\Agile-Development\
+esources\\views/registeredevent.blade.php(122): Illuminate\\Support\\Collection->offsetGet('quantity')
 #2 C:\\Users\\Asus\\Desktop\\Agile-Development\\vendor\\laravel\\framework\\src\\Illuminate\\Filesystem\\Filesystem.php(107): require('C:\\\\Users\\\\Asus\\\\D...')
 #3 C:\\Users\\Asus\\Desktop\\Agile-Development\\vendor\\laravel\\framework\\src\\Illuminate\\Filesystem\\Filesystem.php(108): Illuminate\\Filesystem\\Filesystem::Illuminate\\Filesystem\\{closure}()
 #4 C:\\Users\\Asus\\Desktop\\Agile-Development\\vendor\\laravel\\framework\\src\\Illuminate\\View\\Engines\\PhpEngine.php(58): Illuminate\\Filesystem\\Filesystem->getRequire('C:\\\\Users\\\\Asus\\\\D...', Array)
@@ -3726,10 +3756,13 @@ Did you mean one of these?
 #52 C:\\Users\\Asus\\Desktop\\Agile-Development\\server.php(21): require_once('C:\\\\Users\\\\Asus\\\\D...')
 #53 {main}
 "} 
-[2020-10-24 09:30:39] local.ERROR: Undefined index: quantity (View: C:\Users\Asus\Desktop\Agile-Development\resources\views\registeredevent.blade.php) {"userId":1,"exception":"[object] (Facade\\Ignition\\Exceptions\\ViewException(code: 0): Undefined index: quantity (View: C:\\Users\\Asus\\Desktop\\Agile-Development\esources\\views\egisteredevent.blade.php) at C:\\Users\\Asus\\Desktop\\Agile-Development\\vendor\\laravel\\framework\\src\\Illuminate\\Collections\\Collection.php:1367)
+[2020-10-24 09:30:39] local.ERROR: Undefined index: quantity (View: C:\Users\Asus\Desktop\Agile-Development\resources\views\registeredevent.blade.php) {"userId":1,"exception":"[object] (Facade\\Ignition\\Exceptions\\ViewException(code: 0): Undefined index: quantity (View: C:\\Users\\Asus\\Desktop\\Agile-Development\
+esources\\views\
+egisteredevent.blade.php) at C:\\Users\\Asus\\Desktop\\Agile-Development\\vendor\\laravel\\framework\\src\\Illuminate\\Collections\\Collection.php:1367)
 [stacktrace]
 #0 C:\\Users\\Asus\\Desktop\\Agile-Development\\vendor\\laravel\\framework\\src\\Illuminate\\Collections\\Collection.php(1367): Illuminate\\Foundation\\Bootstrap\\HandleExceptions->handleError(8, 'Undefined index...', 'C:\\\\Users\\\\Asus\\\\D...', 1367, Array)
-#1 C:\\Users\\Asus\\Desktop\\Agile-Development\esources\\views/registeredevent.blade.php(122): Illuminate\\Support\\Collection->offsetGet('quantity')
+#1 C:\\Users\\Asus\\Desktop\\Agile-Development\
+esources\\views/registeredevent.blade.php(122): Illuminate\\Support\\Collection->offsetGet('quantity')
 #2 C:\\Users\\Asus\\Desktop\\Agile-Development\\vendor\\laravel\\framework\\src\\Illuminate\\Filesystem\\Filesystem.php(107): require('C:\\\\Users\\\\Asus\\\\D...')
 #3 C:\\Users\\Asus\\Desktop\\Agile-Development\\vendor\\laravel\\framework\\src\\Illuminate\\Filesystem\\Filesystem.php(108): Illuminate\\Filesystem\\Filesystem::Illuminate\\Filesystem\\{closure}()
 #4 C:\\Users\\Asus\\Desktop\\Agile-Development\\vendor\\laravel\\framework\\src\\Illuminate\\View\\Engines\\PhpEngine.php(58): Illuminate\\Filesystem\\Filesystem->getRequire('C:\\\\Users\\\\Asus\\\\D...', Array)
@@ -3840,10 +3873,13 @@ Did you mean one of these?
 #52 C:\\Users\\Asus\\Desktop\\Agile-Development\\server.php(21): require_once('C:\\\\Users\\\\Asus\\\\D...')
 #53 {main}
 "} 
-[2020-10-24 09:31:59] local.ERROR: Undefined index: quantity (View: C:\Users\Asus\Desktop\Agile-Development\resources\views\registeredevent.blade.php) {"userId":1,"exception":"[object] (Facade\\Ignition\\Exceptions\\ViewException(code: 0): Undefined index: quantity (View: C:\\Users\\Asus\\Desktop\\Agile-Development\esources\\views\egisteredevent.blade.php) at C:\\Users\\Asus\\Desktop\\Agile-Development\\vendor\\laravel\\framework\\src\\Illuminate\\Collections\\Collection.php:1367)
+[2020-10-24 09:31:59] local.ERROR: Undefined index: quantity (View: C:\Users\Asus\Desktop\Agile-Development\resources\views\registeredevent.blade.php) {"userId":1,"exception":"[object] (Facade\\Ignition\\Exceptions\\ViewException(code: 0): Undefined index: quantity (View: C:\\Users\\Asus\\Desktop\\Agile-Development\
+esources\\views\
+egisteredevent.blade.php) at C:\\Users\\Asus\\Desktop\\Agile-Development\\vendor\\laravel\\framework\\src\\Illuminate\\Collections\\Collection.php:1367)
 [stacktrace]
 #0 C:\\Users\\Asus\\Desktop\\Agile-Development\\vendor\\laravel\\framework\\src\\Illuminate\\Collections\\Collection.php(1367): Illuminate\\Foundation\\Bootstrap\\HandleExceptions->handleError(8, 'Undefined index...', 'C:\\\\Users\\\\Asus\\\\D...', 1367, Array)
-#1 C:\\Users\\Asus\\Desktop\\Agile-Development\esources\\views/registeredevent.blade.php(122): Illuminate\\Support\\Collection->offsetGet('quantity')
+#1 C:\\Users\\Asus\\Desktop\\Agile-Development\
+esources\\views/registeredevent.blade.php(122): Illuminate\\Support\\Collection->offsetGet('quantity')
 #2 C:\\Users\\Asus\\Desktop\\Agile-Development\\vendor\\laravel\\framework\\src\\Illuminate\\Filesystem\\Filesystem.php(107): require('C:\\\\Users\\\\Asus\\\\D...')
 #3 C:\\Users\\Asus\\Desktop\\Agile-Development\\vendor\\laravel\\framework\\src\\Illuminate\\Filesystem\\Filesystem.php(108): Illuminate\\Filesystem\\Filesystem::Illuminate\\Filesystem\\{closure}()
 #4 C:\\Users\\Asus\\Desktop\\Agile-Development\\vendor\\laravel\\framework\\src\\Illuminate\\View\\Engines\\PhpEngine.php(58): Illuminate\\Filesystem\\Filesystem->getRequire('C:\\\\Users\\\\Asus\\\\D...', Array)
@@ -3993,10 +4029,13 @@ Did you mean one of these?
 #34 C:\\Users\\Asus\\Desktop\\Agile-Development\\server.php(21): require_once('C:\\\\Users\\\\Asus\\\\D...')
 #35 {main}
 "} 
-[2020-10-24 09:33:35] local.ERROR: Undefined index: quantity (View: C:\Users\Asus\Desktop\Agile-Development\resources\views\registeredevent.blade.php) {"userId":1,"exception":"[object] (Facade\\Ignition\\Exceptions\\ViewException(code: 0): Undefined index: quantity (View: C:\\Users\\Asus\\Desktop\\Agile-Development\esources\\views\egisteredevent.blade.php) at C:\\Users\\Asus\\Desktop\\Agile-Development\\vendor\\laravel\\framework\\src\\Illuminate\\Collections\\Collection.php:1367)
+[2020-10-24 09:33:35] local.ERROR: Undefined index: quantity (View: C:\Users\Asus\Desktop\Agile-Development\resources\views\registeredevent.blade.php) {"userId":1,"exception":"[object] (Facade\\Ignition\\Exceptions\\ViewException(code: 0): Undefined index: quantity (View: C:\\Users\\Asus\\Desktop\\Agile-Development\
+esources\\views\
+egisteredevent.blade.php) at C:\\Users\\Asus\\Desktop\\Agile-Development\\vendor\\laravel\\framework\\src\\Illuminate\\Collections\\Collection.php:1367)
 [stacktrace]
 #0 C:\\Users\\Asus\\Desktop\\Agile-Development\\vendor\\laravel\\framework\\src\\Illuminate\\Collections\\Collection.php(1367): Illuminate\\Foundation\\Bootstrap\\HandleExceptions->handleError(8, 'Undefined index...', 'C:\\\\Users\\\\Asus\\\\D...', 1367, Array)
-#1 C:\\Users\\Asus\\Desktop\\Agile-Development\esources\\views/registeredevent.blade.php(122): Illuminate\\Support\\Collection->offsetGet('quantity')
+#1 C:\\Users\\Asus\\Desktop\\Agile-Development\
+esources\\views/registeredevent.blade.php(122): Illuminate\\Support\\Collection->offsetGet('quantity')
 #2 C:\\Users\\Asus\\Desktop\\Agile-Development\\vendor\\laravel\\framework\\src\\Illuminate\\Filesystem\\Filesystem.php(107): require('C:\\\\Users\\\\Asus\\\\D...')
 #3 C:\\Users\\Asus\\Desktop\\Agile-Development\\vendor\\laravel\\framework\\src\\Illuminate\\Filesystem\\Filesystem.php(108): Illuminate\\Filesystem\\Filesystem::Illuminate\\Filesystem\\{closure}()
 #4 C:\\Users\\Asus\\Desktop\\Agile-Development\\vendor\\laravel\\framework\\src\\Illuminate\\View\\Engines\\PhpEngine.php(58): Illuminate\\Filesystem\\Filesystem->getRequire('C:\\\\Users\\\\Asus\\\\D...', Array)
@@ -4107,10 +4146,13 @@ Did you mean one of these?
 #52 C:\\Users\\Asus\\Desktop\\Agile-Development\\server.php(21): require_once('C:\\\\Users\\\\Asus\\\\D...')
 #53 {main}
 "} 
-[2020-10-24 09:33:53] local.ERROR: Undefined index: quantity (View: C:\Users\Asus\Desktop\Agile-Development\resources\views\registeredevent.blade.php) {"userId":1,"exception":"[object] (Facade\\Ignition\\Exceptions\\ViewException(code: 0): Undefined index: quantity (View: C:\\Users\\Asus\\Desktop\\Agile-Development\esources\\views\egisteredevent.blade.php) at C:\\Users\\Asus\\Desktop\\Agile-Development\\vendor\\laravel\\framework\\src\\Illuminate\\Collections\\Collection.php:1367)
+[2020-10-24 09:33:53] local.ERROR: Undefined index: quantity (View: C:\Users\Asus\Desktop\Agile-Development\resources\views\registeredevent.blade.php) {"userId":1,"exception":"[object] (Facade\\Ignition\\Exceptions\\ViewException(code: 0): Undefined index: quantity (View: C:\\Users\\Asus\\Desktop\\Agile-Development\
+esources\\views\
+egisteredevent.blade.php) at C:\\Users\\Asus\\Desktop\\Agile-Development\\vendor\\laravel\\framework\\src\\Illuminate\\Collections\\Collection.php:1367)
 [stacktrace]
 #0 C:\\Users\\Asus\\Desktop\\Agile-Development\\vendor\\laravel\\framework\\src\\Illuminate\\Collections\\Collection.php(1367): Illuminate\\Foundation\\Bootstrap\\HandleExceptions->handleError(8, 'Undefined index...', 'C:\\\\Users\\\\Asus\\\\D...', 1367, Array)
-#1 C:\\Users\\Asus\\Desktop\\Agile-Development\esources\\views/registeredevent.blade.php(122): Illuminate\\Support\\Collection->offsetGet('quantity')
+#1 C:\\Users\\Asus\\Desktop\\Agile-Development\
+esources\\views/registeredevent.blade.php(122): Illuminate\\Support\\Collection->offsetGet('quantity')
 #2 C:\\Users\\Asus\\Desktop\\Agile-Development\\vendor\\laravel\\framework\\src\\Illuminate\\Filesystem\\Filesystem.php(107): require('C:\\\\Users\\\\Asus\\\\D...')
 #3 C:\\Users\\Asus\\Desktop\\Agile-Development\\vendor\\laravel\\framework\\src\\Illuminate\\Filesystem\\Filesystem.php(108): Illuminate\\Filesystem\\Filesystem::Illuminate\\Filesystem\\{closure}()
 #4 C:\\Users\\Asus\\Desktop\\Agile-Development\\vendor\\laravel\\framework\\src\\Illuminate\\View\\Engines\\PhpEngine.php(58): Illuminate\\Filesystem\\Filesystem->getRequire('C:\\\\Users\\\\Asus\\\\D...', Array)
@@ -4221,10 +4263,13 @@ Did you mean one of these?
 #52 C:\\Users\\Asus\\Desktop\\Agile-Development\\server.php(21): require_once('C:\\\\Users\\\\Asus\\\\D...')
 #53 {main}
 "} 
-[2020-10-24 09:36:58] local.ERROR: Undefined index: quantity (View: C:\Users\Asus\Desktop\Agile-Development\resources\views\registeredevent.blade.php) {"userId":1,"exception":"[object] (Facade\\Ignition\\Exceptions\\ViewException(code: 0): Undefined index: quantity (View: C:\\Users\\Asus\\Desktop\\Agile-Development\esources\\views\egisteredevent.blade.php) at C:\\Users\\Asus\\Desktop\\Agile-Development\\vendor\\laravel\\framework\\src\\Illuminate\\Collections\\Collection.php:1367)
+[2020-10-24 09:36:58] local.ERROR: Undefined index: quantity (View: C:\Users\Asus\Desktop\Agile-Development\resources\views\registeredevent.blade.php) {"userId":1,"exception":"[object] (Facade\\Ignition\\Exceptions\\ViewException(code: 0): Undefined index: quantity (View: C:\\Users\\Asus\\Desktop\\Agile-Development\
+esources\\views\
+egisteredevent.blade.php) at C:\\Users\\Asus\\Desktop\\Agile-Development\\vendor\\laravel\\framework\\src\\Illuminate\\Collections\\Collection.php:1367)
 [stacktrace]
 #0 C:\\Users\\Asus\\Desktop\\Agile-Development\\vendor\\laravel\\framework\\src\\Illuminate\\Collections\\Collection.php(1367): Illuminate\\Foundation\\Bootstrap\\HandleExceptions->handleError(8, 'Undefined index...', 'C:\\\\Users\\\\Asus\\\\D...', 1367, Array)
-#1 C:\\Users\\Asus\\Desktop\\Agile-Development\esources\\views/registeredevent.blade.php(122): Illuminate\\Support\\Collection->offsetGet('quantity')
+#1 C:\\Users\\Asus\\Desktop\\Agile-Development\
+esources\\views/registeredevent.blade.php(122): Illuminate\\Support\\Collection->offsetGet('quantity')
 #2 C:\\Users\\Asus\\Desktop\\Agile-Development\\vendor\\laravel\\framework\\src\\Illuminate\\Filesystem\\Filesystem.php(107): require('C:\\\\Users\\\\Asus\\\\D...')
 #3 C:\\Users\\Asus\\Desktop\\Agile-Development\\vendor\\laravel\\framework\\src\\Illuminate\\Filesystem\\Filesystem.php(108): Illuminate\\Filesystem\\Filesystem::Illuminate\\Filesystem\\{closure}()
 #4 C:\\Users\\Asus\\Desktop\\Agile-Development\\vendor\\laravel\\framework\\src\\Illuminate\\View\\Engines\\PhpEngine.php(58): Illuminate\\Filesystem\\Filesystem->getRequire('C:\\\\Users\\\\Asus\\\\D...', Array)
@@ -4801,9 +4846,13 @@ Did you mean one of these?
 #44 C:\\Users\\Asus\\Desktop\\Agile-Development\\server.php(21): require_once('C:\\\\Users\\\\Asus\\\\D...')
 #45 {main}
 "} 
-[2020-10-24 09:57:25] local.ERROR: Undefined variable: reg (View: C:\Users\Asus\Desktop\Agile-Development\resources\views\registeredevent.blade.php) {"userId":1,"exception":"[object] (Facade\\Ignition\\Exceptions\\ViewException(code: 0): Undefined variable: reg (View: C:\\Users\\Asus\\Desktop\\Agile-Development\esources\\views\egisteredevent.blade.php) at C:\\Users\\Asus\\Desktop\\Agile-Development\esources\\views/registeredevent.blade.php:122)
+[2020-10-24 09:57:25] local.ERROR: Undefined variable: reg (View: C:\Users\Asus\Desktop\Agile-Development\resources\views\registeredevent.blade.php) {"userId":1,"exception":"[object] (Facade\\Ignition\\Exceptions\\ViewException(code: 0): Undefined variable: reg (View: C:\\Users\\Asus\\Desktop\\Agile-Development\
+esources\\views\
+egisteredevent.blade.php) at C:\\Users\\Asus\\Desktop\\Agile-Development\
+esources\\views/registeredevent.blade.php:122)
 [stacktrace]
-#0 C:\\Users\\Asus\\Desktop\\Agile-Development\esources\\views/registeredevent.blade.php(122): Illuminate\\Foundation\\Bootstrap\\HandleExceptions->handleError(8, 'Undefined varia...', 'C:\\\\Users\\\\Asus\\\\D...', 122, Array)
+#0 C:\\Users\\Asus\\Desktop\\Agile-Development\
+esources\\views/registeredevent.blade.php(122): Illuminate\\Foundation\\Bootstrap\\HandleExceptions->handleError(8, 'Undefined varia...', 'C:\\\\Users\\\\Asus\\\\D...', 122, Array)
 #1 C:\\Users\\Asus\\Desktop\\Agile-Development\\vendor\\laravel\\framework\\src\\Illuminate\\Filesystem\\Filesystem.php(107): require('C:\\\\Users\\\\Asus\\\\D...')
 #2 C:\\Users\\Asus\\Desktop\\Agile-Development\\vendor\\laravel\\framework\\src\\Illuminate\\Filesystem\\Filesystem.php(108): Illuminate\\Filesystem\\Filesystem::Illuminate\\Filesystem\\{closure}()
 #3 C:\\Users\\Asus\\Desktop\\Agile-Development\\vendor\\laravel\\framework\\src\\Illuminate\\View\\Engines\\PhpEngine.php(58): Illuminate\\Filesystem\\Filesystem->getRequire('C:\\\\Users\\\\Asus\\\\D...', Array)
