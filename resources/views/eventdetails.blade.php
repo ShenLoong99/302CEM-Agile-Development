@@ -111,14 +111,16 @@
     </div>
     <!-- Hero End -->
     <!--? About Law Start-->
-    <form action="/e/eventdetails/{{$event -> id}}" method="POST">
-        @csrf
-            @method('DELETE')
-            <button class="btn mt-50" style="margin-right: 50px; float: right; background-color:#C70039 ;" onclick="return confirm('Are you sure you want to delete this event?')">
-                Delete Event
-            </button>
-    </form>
-
+    @guest
+    @elseif ($event->admin_id == Auth::user()->id && Auth::user()->role == 1)
+        <form action="/e/eventdetails/{{$event -> id}}" method="POST">
+            @csrf
+                @method('DELETE')
+                <button class="btn mt-50" style="margin-right: 50px; float: right; background-color:#C70039 ;" onclick="return confirm('Are you sure you want to delete this event?')">
+                    Delete Event
+                </button>
+        </form>
+    @endguest
 
     <section class="about-low-area section-padding">
         <div class="container">
@@ -214,7 +216,9 @@
                                 @else
                                     <input type="number" name="qty" class="form-control form control-lg" min="1" max="{{ $event->max_participants - $available }}" style="width: 200px" required />
                                 @endif
-                                <button name="submit" type="submit" class="btn mt-50">Purchase Ticket!</button>
+                                @if ($event->active == 1)
+                                    <button name="submit" type="submit" class="btn mt-50">Purchase Ticket!</button>
+                                @endif
                             </form>
                         @else 
                             <button name="submit" disabled class="btn mt-50">Sold Out!</button>

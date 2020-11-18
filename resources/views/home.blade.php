@@ -59,7 +59,7 @@
                                         @guest
                                         <li class="nav-item">
                                             <a class="btn header-btn" href="{{ route('login') }}">{{ __('Login / Register') }}</a>
-                                           <!--  @if (Route::has('register'))
+                                            <!--  @if (Route::has('register'))
                                             <a style="color: black; display: inline-block;" class="nav-link" href="{{ route('register') }}">{{ __(' / Register') }}</a> -->
                                         </li>
                                         @endif
@@ -70,18 +70,17 @@
                                             </a>
 
                                             <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
-                                                <a class="dropdown-item" href="{{ route('logout') }}"
-                                                onclick="event.preventDefault();
+                                                <a class="dropdown-item" href="{{ route('logout') }}" onclick="event.preventDefault();
                                                 document.getElementById('logout-form').submit();">
-                                                {{ __('Logout') }}
-                                            </a>
+                                                    {{ __('Logout') }}
+                                                </a>
 
-                                            <form id="logout-form" action="{{ route('logout') }}" method="POST" class="d-none">
-                                                @csrf
-                                            </form>
-                                        </div>
-                                    </li>
-                                    @endguest
+                                                <form id="logout-form" action="{{ route('logout') }}" method="POST" class="d-none">
+                                                    @csrf
+                                                </form>
+                                            </div>
+                                        </li>
+                                        @endguest
                                 </div>
                             </div>
                         </div>
@@ -150,57 +149,85 @@
                 </div>
             </div>
             <!-- Counter Section End -->
-        </div>
+        </div><br>
         <!-- slider Area End-->
+        <!-- <h2 class="text-center">Recent Updates about Events</h2>
+        <h3 class="text-center">Click to view the updates</h3>
+        <div class="container">
+            <table class="table table-bordered">
+                <thead>
+                    <tr>
+                        <th class="w-75">Events</th>
+                        <th class="w-25">Updated Date</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    
+                </tbody>
+            </table>
+        </div><br> -->
+        <div style="overflow-y: auto; max-height: 500px;" class="container">
+            @if (!$notifications->isEmpty())
+            <h3 class="card-title mb-3 text-center"><b>There are changes to the following events:-</b></h3><br>
+
+            @foreach($notifications as $row)
+            <a target="_blank" href={{ url('eventdetails/'. $row['ev_ID']) }}>
+                <h5 class="card-title mb-1">{{ $row->ev_name }}</h5>
+                <p class="mb-0"><i>Changes made at {{ date('d-m-Y h:ia', strtotime($row->updated_at)) }}</i></p>
+            </a>
+            <hr class="my-3" />
+            @endforeach
+            @endif
+        </div>
         <!--? About Law Start-->
         <section class="about-low-area section-padding2">
             <div class="container">
                 @foreach($event as $event)
-                    <div class="row mb-5 pb-5">
-                        <div class="col-lg-6 col-md-12">
-                            <div class="about-caption mb-50">
-                                <!-- Section Tittle -->
-                                <div class="section-tittle mb-35">
-                                    <h2>{{ $event->ev_name }}</h2>
-                                </div>
-                                <p>{{ $event->description }}</p>
+                <div class="row mb-5 pb-5">
+                    <div class="col-lg-6 col-md-12">
+                        <div class="about-caption mb-50">
+                            <!-- Section Tittle -->
+                            <div class="section-tittle mb-35">
+                                <h2>{{ $event->ev_name }}</h2>
                             </div>
-                            <div class="row">
-                                <div class="col-lg-6 col-md-6 col-sm-6 col-xs-10">
-                                    <div class="single-caption mb-20">
-                                        <div class="caption-icon">
-                                            <span class="flaticon-communications-1"></span>
-                                        </div>
-                                        <div class="caption">
-                                            <h5>Where</h5>
-                                            <p>{{ $event->ev_location }}</p>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="col-lg-6 col-md-6 col-sm-6 col-xs-10">
-                                    <div class="single-caption mb-20">
-                                        <div class="caption-icon">
-                                            <span class="flaticon-education"></span>
-                                        </div>
-                                        <div class="caption">
-                                            <h5>When</h5>
-                                            <p>{{$event->date_time_start }}</p>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
+                            <p>{{ $event->description }}</p>
                         </div>
-                        <div class="col-lg-6 col-md-12">
-                            <!-- about-img -->
-                            <div class="about-img ">
-                                <div class="about-back-img ">
-                                    <img style="width: 500px; height: 350px" src={{ $event->image }} alt="event photo">
+                        <div class="row">
+                            <div class="col-lg-6 col-md-6 col-sm-6 col-xs-10">
+                                <div class="single-caption mb-20">
+                                    <div class="caption-icon">
+                                        <span class="flaticon-communications-1"></span>
+                                    </div>
+                                    <div class="caption">
+                                        <h5>Where</h5>
+                                        <p>{{ $event->ev_location }}</p>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-lg-6 col-md-6 col-sm-6 col-xs-10">
+                                <div class="single-caption mb-20">
+                                    <div class="caption-icon">
+                                        <span class="flaticon-education"></span>
+                                    </div>
+                                    <div class="caption">
+                                        <h5>When</h5>
+                                        <p>{{$event->date_time_start }}</p>
+                                    </div>
                                 </div>
                             </div>
                         </div>
                     </div>
+                    <div class="col-lg-6 col-md-12">
+                        <!-- about-img -->
+                        <div class="about-img ">
+                            <div class="about-back-img ">
+                                <img style="width: 500px; height: 350px" src={{ $event->image }} alt="event photo">
+                            </div>
+                        </div>
+                    </div>
+                </div>
                 @endforeach
-                <center><a href={{ url('/view_event') }}  class="btn">View More Events</a></center>
+                <center><a href={{ url('/view_event') }} class="btn">View More Events</a></center>
             </div>
         </section>
         <!-- About Law End-->
