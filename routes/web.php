@@ -21,6 +21,7 @@ Route::get('/', function () {
 Route::get('/e/eventdetails/{event}', 'App\Http\Controllers\EventController@show');
 Route::delete('/e/eventdetails/{event}', 'App\Http\Controllers\EventController@destroy');
 
+Route::get('/e/attendees/{event}', 'App\Http\Controllers\EventController@attendees');
 Auth::routes();
 
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
