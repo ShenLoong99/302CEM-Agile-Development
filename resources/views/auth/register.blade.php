@@ -40,7 +40,7 @@
                         </div>
 
                         <div class="form-group row">
-                            <label for="role" class="col-md-4 col-form-label text-md-right">Category</label>
+                            <label for="role" class="col-md-4 col-form-label text-md-right">Role</label>
                             <div class="col-md-6">
                                 <select id="role" name="role" class="form-control @error('role') is-invalid @enderror" autofocus>
                                   <option value=0>Member</option>

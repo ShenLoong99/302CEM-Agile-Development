@@ -14,10 +14,10 @@ class HomeController extends Controller
      *
      * @return void
      */
-    public function __construct()
-    {
-        $this->middleware('auth');
-    }
+    // public function __construct()
+    // {
+    //     $this->middleware('auth');
+    // }
 
     /**
      * Show the application dashboard.
@@ -50,7 +50,7 @@ class HomeController extends Controller
             $value["updated_at"] = $events["updated_at"];
 
             // delete event record there is no changes after user register
-            if($events["updated_at"] < $value["created_at"])
+            if($events["updated_at"] < $value["created_at"] || $events["active"] == 0)
             {
                 unset($reg[$key]);
             }
@@ -59,7 +59,8 @@ class HomeController extends Controller
         // sort by latest updated date
         $reg = $reg->sortByDesc('updated_at');
 
-
-      return view('welcome', ['notifications' => $reg]); 
+        return view('welcome', ['notifications' => $reg]); 
+        // return true;
+        
   }
 }

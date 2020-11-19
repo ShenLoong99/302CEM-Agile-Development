@@ -42,4 +42,11 @@ class UpdateEventDetailsTest extends TestCase
         $response->assertStatus(200);
     }
 
+    /** @test_show_notificaitons */
+    public function test_show_notificaitons()
+    {
+        $response = $this->get('/');
+        $response->assertStatus(200);
+    }
+
 }
