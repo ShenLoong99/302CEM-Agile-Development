@@ -28,7 +28,7 @@
                         <!-- Logo -->
                         <div class="col-xl-2 col-lg-2 col-md-1">
                             <div class="logo">
-                                <a href="index.html"><img src="assets/img/logo/logo.png" alt=""></a>
+                                <a href={{ url('/') }}><img src="assets/img/logo/logo.png" alt=""></a>
                             </div>
                         </div>
                         <div class="col-xl-10 col-lg-10 col-md-10">
@@ -37,9 +37,9 @@
                                 <div class="main-menu f-right d-none d-lg-block">
                                     <nav>
                                         <ul id="navigation">
-                                            <li><a href="index.html">Home</a></li>
-                                            <li><a href="about.html">About</a></li>
-                                            <li><a href="spakers.html">Speakers</a></li>
+                                            <li><a href={{ url('/') }}>Home</a></li>
+                                            <li><a href={{ url('/view_event') }}>Events</a></li>
+                                            <li><a href={{ url('/registered_event') }}>My Events</a></li>
                                             <li><a href="schedule.html">Schedule</a></li>
                                             <li><a href="blog.html">Blog</a>
                                                 <ul class="submenu">
@@ -150,22 +150,6 @@
             </div>
             <!-- Counter Section End -->
         </div><br>
-        <!-- slider Area End-->
-        <!-- <h2 class="text-center">Recent Updates about Events</h2>
-        <h3 class="text-center">Click to view the updates</h3>
-        <div class="container">
-            <table class="table table-bordered">
-                <thead>
-                    <tr>
-                        <th class="w-75">Events</th>
-                        <th class="w-25">Updated Date</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    
-                </tbody>
-            </table>
-        </div><br> -->
         <div style="overflow-y: auto; max-height: 500px;" class="container">
             @if (!$notifications->isEmpty())
             <h3 class="card-title mb-3 text-center"><b>There are changes to the following events:-</b></h3><br>

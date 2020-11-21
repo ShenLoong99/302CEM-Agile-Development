@@ -24,6 +24,7 @@ Route::get('/update/{event}', 'App\Http\Controllers\EventController@update');
 //Route to event details page - Shaun part
 Route::get('/eventdetails/{event}', 'App\Http\Controllers\EventController@show');
 Route::delete('/eventdetails/{event}', 'App\Http\Controllers\EventController@destroy');
+Route::get('/attendees/{event}', 'App\Http\Controllers\EventController@attendees');
 //Khai Shian part
 Route::get('/view_event', 'App\Http\Controllers\EventController@view_event');
 Route::get('/admin_event', 'App\Http\Controllers\EventController@event');

@@ -10,14 +10,14 @@ class UpdateEventDetailsTest extends TestCase
 {
     /** @test_load_edit_page */
     public function test_load_edit_page () {
-        $response = $this->get('/edit/1');
+        $response = $this->get('/edit/2');
         $response->assertStatus(200);
     }
 
     /** @test_update_event_details */
     // public function test_update_event_details() {
     //     $response = $this->json('GET', 
-    //         '/update/1', 
+    //         '/update/4', 
     //         ['event_name' => 'Testing Event', 
     //         'description' => 'This is description', 
     //         'category' => 3, 

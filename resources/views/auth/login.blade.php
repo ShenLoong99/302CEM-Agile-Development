@@ -28,7 +28,7 @@
                         <!-- Logo -->
                         <div class="col-xl-2 col-lg-2 col-md-1">
                             <div class="logo">
-                                <a href="index.html"><img src="../../assets/img/logo/logo.png" alt=""></a>
+                                <a href={{ url('/') }}><img src="assets/img/logo/logo.png" alt=""></a>
                             </div>
                         </div>
                         <div class="col-xl-10 col-lg-10 col-md-10">
@@ -37,9 +37,9 @@
                                 <div class="main-menu f-right d-none d-lg-block">
                                     <nav>
                                         <ul id="navigation">
-                                            <li><a href="index.html">Home</a></li>
-                                            <li><a href="about.html">About</a></li>
-                                            <li><a href="spakers.html">Speakers</a></li>
+                                            <li><a href={{ url('/') }}>Home</a></li>
+                                            <li><a href={{ url('/view_event') }}>Events</a></li>
+                                            <li><a href={{ url('/registered_event') }}>My Events</a></li>
                                             <li><a href="schedule.html">Schedule</a></li>
                                             <li><a href="blog.html">Blog</a>
                                                 <ul class="submenu">
