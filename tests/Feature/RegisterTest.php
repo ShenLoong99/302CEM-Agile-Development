@@ -7,11 +7,6 @@ use Tests\TestCase;
 
 class RegisterTest extends TestCase
 {
-    // /** @test_load_edit_page */
-    // public function test_load_edit_page () {
-    //     $response = $this->get('/edit/1');
-    //     $response->assertStatus(200);
-    // }
 
     /** @test_update_event_details */
     public function test_register_user() {

@@ -53,6 +53,8 @@ class EventController extends Controller
 	public function destroy($event_id){
 		$event = Event::findOrFail($event_id);
 		$event -> delete();
+		$reg = Booking_List::where('ev_ID', $event_id);
+		$reg -> delete();
 
 		//return redirect('/e/eventdetails/1');
 		return true;
@@ -63,7 +65,7 @@ class EventController extends Controller
 		$mem_ID = Auth::id();
         $reg = Booking_List::where('ev_ID', $event_id)->get();
         $event = Event::where('id', $event_id)->first();
-
+        $data["sum"] = Booking_List::get()->sum("quantity");
         if (!$event)
         {
         	return view('home');
@@ -77,7 +79,7 @@ class EventController extends Controller
 			}
         }
 
-		return view('attendees', ['reg' => $reg, 'event' => $event]);
+		return view('attendees', $data, ['reg' => $reg, 'event' => $event]);
 	}
 
 }

@@ -6,9 +6,7 @@
     <title> Event Details </title>
     <meta name="description" content="">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link rel="manifest" href="site.webmanifest">
     <link rel="shortcut icon" type="image/x-icon" href="../../assets/img/favicon.ico">
-
     <!-- CSS here -->
     <link rel="stylesheet" href="../../assets/css/bootstrap.min.css">
     <link rel="stylesheet" href="../../assets/css/owl.carousel.min.css">
@@ -110,14 +108,65 @@
     <!-- Header End -->
 </header>
 <main>
-    <div>
-
-    <p class="mb-0">{{ $event->ev_name }}</p>
-
-
+      <!--? Hero Start -->
+    <div class="slider-area2">
+        <div class="slider-height2 d-flex align-items-center">
+            <div class="container">
+                <div class="row">
+                    <div class="col-xl-12">
+                        <div class="hero-cap text-center">
+                            <h2>Event Attendees List</h2>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Hero End -->
+    <div style=" background-color: wheat;
+          width: 50%;
+          border: 15px solid;
+          border-color: #0A1152;
+          padding: 40px;
+          border-radius: 0.5em;
+          margin-left: auto;
+          margin-right: auto;
+          margin-top: 20px;
+          margin-bottom: 20px;">
+    <center><h5>- Event Attendees List Details -</h5><br/></center>
+    <p class="mb-0"><b><i class="fa fa-calendar"></i> &nbsp; Event Name:</b>  {{ $event->ev_name }}</p>
+    <br/>
+    <div class="row">
+        <div class="col-6">
+            <p><b><i class="fa fa-user"></i>&nbsp; Registered Users: </b></p>
+        </div>
+         <div class="col-6">
+            <p><b><i class="fa fa-ticket-alt"></i>&nbsp; Tickets Quantity: </b></p>
+        </div>
+    </div>
     @foreach($reg as $row)
-    <p class="mb-0">{{ $row->register_name }}</p>
+    <div class="row">
+        <div class="col-6">
+            <p class="mb-0" style="margin-left: 25px;">{{ $row->register_name }}</p>
+        </div>
+        <div class="col-6">
+
+            <p class="mb-0" style="margin-left: 80px;">{{ $row->quantity }}</p>
+
+        </div>
+    </div>
     @endforeach
+    <hr style="border: 1px solid black;">
+    
+    <div class="row">
+        <div class="col-6">
+
+            <p><b>Total User(s):</b>&nbsp; {{$reg -> count()}}</p>
+        </div>
+        <div class="col-6">
+            <p class="mb-0" ><b>Total Ticket(s):</b>&nbsp; {{$sum}}</p>
+        </div>
+    </div>
 </div>
    </main>
     <footer>
