@@ -9,4 +9,5 @@ class Booking_List extends Model
 {
     // use HasFactory;
     protected $table = "booking_list";
+    protected $primaryKey = "book_ID";
 }

@@ -27,7 +27,7 @@
                     <!-- Logo -->
                     <div class="col-xl-2 col-lg-2 col-md-1">
                         <div class="logo">
-                            <a href="index.html"><img src="../../assets/img/logo/logo.png" alt=""></a>
+                            <a href={{ url('/') }}><img src="../../assets/img/logo/logo.png" alt=""></a>
                         </div>
                     </div>
                     <div class="col-xl-10 col-lg-10 col-md-10">
@@ -36,9 +36,9 @@
                             <div class="main-menu f-right d-none d-lg-block">
                                 <nav>
                                     <ul id="navigation">
-                                        <li><a href="index.html">Home</a></li>
-                                        <li><a href="about.html">About</a></li>
-                                        <li><a href="spakers.html">Spakers</a></li>
+                                        <li><a href={{ url('/') }}>Home</a></li>
+                                        <li><a href={{ url('/view_event') }}>Events</a></li>
+                                        <li><a href={{ url('/registered_event') }}>My Events</a></li>
                                         <li><a href="schedule.html">Schedule</a></li>
                                         <li><a href="blog.html">Blog</a>
                                             <ul class="submenu">
@@ -120,6 +120,21 @@
                                     </span>
                                 @enderror
                             </div>
+                        </div>
+
+                        <div class="form-group row">
+                            <label for="role" class="col-md-4 col-form-label text-md-right">Category</label>
+                            <div class="col-md-6">
+                                <select id="role" name="role" class="form-control @error('role') is-invalid @enderror" autofocus>
+                                  <option value=0>Member</option>
+                                  <option value=1>Event Hoster</option>
+                                </select>
+                            </div>
+                          @error('role')
+                          <span class="invalid-feedback" role="alert">
+                            <strong>{{ $message }}</strong>
+                          </span>
+                          @enderror
                         </div>
 
                         <div class="form-group row">

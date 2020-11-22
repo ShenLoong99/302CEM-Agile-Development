@@ -26,7 +26,7 @@
                     <!-- Logo -->
                     <div class="col-xl-2 col-lg-2 col-md-1">
                         <div class="logo">
-                            <a href="index.html"><img src="assets/img/logo/logo.png" alt=""></a>
+                            <a href={{ url('/') }}><img src="assets/img/logo/logo.png" alt=""></a>
                         </div>
                     </div>
                     <div class="col-xl-10 col-lg-10 col-md-10">
@@ -36,8 +36,8 @@
                                 <nav>
                                     <ul id="navigation">
                                         <li><a href={{ url('/') }}>Home</a></li>
-                                        <li><a href="about.html">About</a></li>
-                                        <li><a href="spakers.html">Spakers</a></li>
+                                        <li><a href={{ url('/view_event') }}>Events</a></li>
+                                        <li><a href={{ url('/registered_event') }}>My Events</a></li>
                                         <li><a href="schedule.html">Schedule</a></li>
                                         <li><a href="blog.html">Blog</a>
                                             <ul class="submenu">
@@ -101,7 +101,7 @@
                 <div class="row">
                     <div class="col-xl-12">
                         <div class="hero-cap text-center">
-                            <h2>Event List</h2>
+                            <h2>Upcoming Events</h2>
                         </div>
                     </div>
                 </div>
@@ -109,6 +109,9 @@
         </div>
     </div>
     <!-- Hero End -->
+    @if (!empty(Auth::user()->id) && Auth::user()->role == 1) 
+        <a class="btn text-white float-right mr-3" href={{ url('/admin_event') }}>View event hosted by you</a><br>
+    @endif
         @php
             $a = 0
         @endphp 

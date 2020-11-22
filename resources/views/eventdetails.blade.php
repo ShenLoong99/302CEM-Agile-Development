@@ -26,7 +26,7 @@
                     <!-- Logo -->
                     <div class="col-xl-2 col-lg-2 col-md-1">
                         <div class="logo">
-                            <a href="index.html"><img src="../../assets/img/logo/logo.png" alt=""></a>
+                            <a href={{ url('/') }}><img src="../../assets/img/logo/logo.png" alt=""></a>
                         </div>
                     </div>
                     <div class="col-xl-10 col-lg-10 col-md-10">
@@ -35,8 +35,8 @@
                             <div class="main-menu f-right d-none d-lg-block">
                                 <nav>
                                     <ul id="navigation">
-                                        <li><a href="index.html">Home</a></li>
-                                        <li><a href="about.html">About</a></li>
+                                        <li><a href={{ url('/') }}>Home</a></li>
+                                        <li><a href={{ url('/view_event') }}>Events</a></li>
                                         <li><a href="spakers.html">Speakers</a></li>
                                         <li><a href="schedule.html">Schedule</a></li>
                                         <li><a href="blog.html">Blog</a>
@@ -111,14 +111,17 @@
     </div>
     <!-- Hero End -->
     <!--? About Law Start-->
-    <form action="/e/eventdetails/{{$event -> id}}" method="POST">
-        @csrf
-            @method('DELETE')
-            <button class="btn mt-50" style="margin-right: 50px; float: right; background-color:#C70039 ;" onclick="return confirm('Are you sure you want to delete this event?')">
-                Delete Event
-            </button>
-    </form>
-
+    @guest
+    @elseif ($event->admin_id == Auth::user()->id && Auth::user()->role == $event->admin_id)
+        <form action="/e/eventdetails/{{$event -> id}}" class="float-right mr-5" method="POST">
+            <a href="/edit/{{$event->id}}" class="btn my-3">Edit Event</a>
+            @csrf
+                @method('DELETE')
+                <button class="btn my-3" style="background-color:#C70039 ;" onclick="return confirm('Are you sure you want to delete this event?')">
+                    Delete Event
+                </button>
+        </form>
+    @endguest
 
     <section class="about-low-area section-padding">
         <div class="container">
@@ -156,14 +159,19 @@
                                     @elseif($event -> cat==2)
                                     <p>
                                         &emsp;&emsp;&nbsp;
-                                        Talk
+                                        Seminar
                                     </p>
                                      @elseif($event -> cat==3)
                                     <p>
                                         &emsp;&emsp;&nbsp;
-                                        Seminar
+                                        Music
                                     </p>
                                      @elseif($event -> cat==4)
+                                    <p>
+                                        &emsp;&emsp;&nbsp;
+                                        Sports
+                                    </p>
+                                    @elseif($event -> cat==5)
                                     <p>
                                         &emsp;&emsp;&nbsp;
                                         Fair
@@ -214,7 +222,9 @@
                                 @else
                                     <input type="number" name="qty" class="form-control form control-lg" min="1" max="{{ $event->max_participants - $available }}" style="width: 200px" required />
                                 @endif
-                                <button name="submit" type="submit" class="btn mt-50">Purchase Ticket!</button>
+                                @if ($event->active == 1)
+                                    <button name="submit" type="submit" class="btn mt-50">Purchase Ticket!</button>
+                                @endif
                             </form>
                         @else 
                             <button name="submit" disabled class="btn mt-50">Sold Out!</button>
