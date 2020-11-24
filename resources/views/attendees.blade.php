@@ -3,30 +3,23 @@
 <head>
     <meta charset="utf-8">
     <meta http-equiv="x-ua-compatible" content="ie=edge">
-    <title> Agile Project </title>
+    <title> Event Details </title>
     <meta name="description" content="">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link rel="manifest" href="site.webmanifest">
-    <link rel="shortcut icon" type="image/x-icon" href="assets/img/favicon.ico">
-
-	<!-- CSS here -->
-	<link rel="stylesheet" href="assets/css/bootstrap.min.css">
-	<link rel="stylesheet" href="assets/css/owl.carousel.min.css">
-	<link rel="stylesheet" href="assets/css/slicknav.css">
-    <link rel="stylesheet" href="assets/css/flaticon.css">
-    <link rel="stylesheet" href="assets/css/gijgo.css">
-	<link rel="stylesheet" href="assets/css/animate.min.css">
-	<link rel="stylesheet" href="assets/css/magnific-popup.css">
-	<link rel="stylesheet" href="assets/css/fontawesome-all.min.css">
-	<link rel="stylesheet" href="assets/css/themify-icons.css">
-	<link rel="stylesheet" href="assets/css/slick.css">
-	<link rel="stylesheet" href="assets/css/nice-select.css">
-    <link rel="stylesheet" href="assets/css/style.css">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
-  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
-  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    <link rel="shortcut icon" type="image/x-icon" href="../../assets/img/favicon.ico">
+    <!-- CSS here -->
+    <link rel="stylesheet" href="../../assets/css/bootstrap.min.css">
+    <link rel="stylesheet" href="../../assets/css/owl.carousel.min.css">
+    <link rel="stylesheet" href="../../assets/css/slicknav.css">
+    <link rel="stylesheet" href="../../assets/css/flaticon.css">
+    <link rel="stylesheet" href="../../assets/css/gijgo.css">
+    <link rel="stylesheet" href="../../assets/css/animate.min.css">
+    <link rel="stylesheet" href="../../assets/css/magnific-popup.css">
+    <link rel="stylesheet" href="../../assets/css/fontawesome-all.min.css">
+    <link rel="stylesheet" href="../../assets/css/themify-icons.css">
+    <link rel="stylesheet" href="../../assets/css/slick.css">
+    <link rel="stylesheet" href="../../assets/css/nice-select.css">
+    <link rel="stylesheet" href="../../assets/css/style.css">
 </head>
 <body>
     <!-- ? Preloader Start -->
@@ -35,7 +28,7 @@
             <div class="preloader-inner position-relative">
                 <div class="preloader-circle"></div>
                 <div class="preloader-img pere-text">
-                    <img src="assets/img/logo/loder.png" alt="">
+                    <img src="../../assets/img/logo/loder.png" alt="">
                 </div>
             </div>
         </div>
@@ -50,7 +43,7 @@
                     <!-- Logo -->
                     <div class="col-xl-2 col-lg-2 col-md-1">
                         <div class="logo">
-                            <a href="index.html"><img src="assets/img/logo/logo.png" alt=""></a>
+                            <a href="index.html"><img src="../../assets/img/logo/logo.png" alt=""></a>
                         </div>
                     </div>
                     <div class="col-xl-10 col-lg-10 col-md-10">
@@ -71,12 +64,37 @@
                                             </ul>
                                         </li>
                                         <li><a href="contact.html">Contact</a></li>
+                                          @guest
+                            <li class="nav-item">
+                                <a class="nav-link" href="{{ route('login') }}">{{ __('Login') }}</a>
+                            </li>
+                            @if (Route::has('register'))
+                                <li class="nav-item">
+                                    <a class="nav-link" href="{{ route('register') }}">{{ __('Register') }}</a>
+                                </li>
+                            @endif
+                        @else
+                            <li class="nav-item dropdown">
+                            <a id="navbarDropdown" class="nav-link dropdown-toggle" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
+                                {{ Auth::user()->name }}
+                            </a>
+
+                            <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
+                                <a class="dropdown-item" href="{{ route('logout') }}"
+                                onclick="event.preventDefault();
+                                document.getElementById('logout-form').submit();">
+                                {{ __('Logout') }}
+                            </a>
+
+                            <form id="logout-form" action="{{ route('logout') }}" method="POST" class="d-none">
+                                @csrf
+                            </form>
+                        </div>
+                        @endguest
                                     </ul>
                                 </nav>
                             </div>
-                            <div class="header-right-btn f-right d-none d-lg-block ml-30">
-                                <a href="#" class="btn header-btn">Get Your Ticket</a>
-                            </div>
+                           
                         </div>
                     </div>   
                     <!-- Mobile Menu -->
@@ -89,15 +107,15 @@
     </div>
     <!-- Header End -->
 </header>
-<main class="mb-5">
-    <!--? Hero Start -->
+<main>
+      <!--? Hero Start -->
     <div class="slider-area2">
         <div class="slider-height2 d-flex align-items-center">
             <div class="container">
                 <div class="row">
                     <div class="col-xl-12">
                         <div class="hero-cap text-center">
-                            <h2>Event List</h2>
+                            <h2>Event Attendees List</h2>
                         </div>
                     </div>
                 </div>
@@ -105,51 +123,52 @@
         </div>
     </div>
     <!-- Hero End -->
-        @php
-            $a = 0
-        @endphp 
+    <div style=" background-color: wheat;
+          width: 50%;
+          border: 15px solid;
+          border-color: #0A1152;
+          padding: 40px;
+          border-radius: 0.5em;
+          margin-left: auto;
+          margin-right: auto;
+          margin-top: 20px;
+          margin-bottom: 20px;">
+    <center><h5>- Event Attendees List Details -</h5><br/></center>
+    <p class="mb-0"><b><i class="fa fa-calendar"></i> &nbsp; Event Name:</b>  {{ $event->ev_name }}</p>
+    <br/>
+    <div class="row">
+        <div class="col-6">
+            <p><b><i class="fa fa-user"></i>&nbsp; Registered Users: </b></p>
+        </div>
+         <div class="col-6">
+            <p><b><i class="fa fa-ticket-alt"></i>&nbsp; Tickets Quantity: </b></p>
+        </div>
+    </div>
+    @foreach($reg as $row)
+    <div class="row">
+        <div class="col-6">
+            <p class="mb-0" style="margin-left: 25px;">{{ $row->register_name }}</p>
+        </div>
+        <div class="col-6">
 
-        @foreach($event as $row)
-            @if($a == 0)         
-               <div class="card-deck mt-5 mx-3">
-            @endif
-            <div class="card">
-                <a onMouseOver="this.style.filter='brightness(1.3)'"onMouseOut="this.style.filter='brightness(1)'" style="display: inline-block; text-decoration: none; color: inherit; outline: 0;" href="/event_detials/{{$row['id']}}">
-                    <div class="card-body">
-                        <h5 class="card-title">{{$row['ev_name']}}</h5>
-                        <p class="card-text mb-1">{{$row['description']}}</p>
-                        <p class="card-text">{{substr($row['date_time_start'], 0, 16)}} - {{substr($row['date_time_end'], 0, 16)}}</p>
-                    </div>
-                </a>
-            </div>
+            <p class="mb-0" style="margin-left: 80px;">{{ $row->quantity }}</p>
 
-            @if($loop->last) 
-                @if($a == 0)         
-                    <div class="card border-0"></div>
-                    <div class="card border-0"></div>
-                @elseif($a == 1) 
-                    <div class="card border-0"></div>
-                @endif
-            @endif
+        </div>
+    </div>
+    @endforeach
+    <hr style="border: 1px solid black;">
+    
+    <div class="row">
+        <div class="col-6">
 
-            @if($a == 2) 
-                @php
-                    $a = 0
-                @endphp
-                </div>
-            @else 
-                @php
-                    $a = $a + 1
-                @endphp
-            @endif
-            
-        @endforeach
-        
-</main>
-
-
-
-
+            <p><b>Total User(s):</b>&nbsp; {{$reg -> count()}}</p>
+        </div>
+        <div class="col-6">
+            <p class="mb-0" ><b>Total Ticket(s):</b>&nbsp; {{$sum}}</p>
+        </div>
+    </div>
+</div>
+   </main>
     <footer>
         <!-- Footer Start-->
         <div class="footer-area footer-padding">
@@ -212,7 +231,7 @@
                                          onblur="this.placeholder = ' Email Address '">
                                          <div class="form-icon">
                                              <button type="submit" name="submit" id="newsletter-submit"
-                                             class="email_icon newsletter-submit button-contactForm"><img src="assets/img/gallery/form.png" alt=""></button>
+                                             class="email_icon newsletter-submit button-contactForm"><img src="../../assets/img/gallery/form.png" alt=""></button>
                                          </div>
                                          <div class="mt-10 info"></div>
                                      </form>
@@ -227,7 +246,7 @@
                     <div class="col-xl-3 col-lg-3 col-md-4 col-sm-6">
                         <!-- logo -->
                         <div class="footer-logo mb-20">
-                        <a href="index.html"><img src="assets/img/logo/logo2_footer.png" alt=""></a>
+                        <a href="index.html"><img src="../../assets/img/logo/logo2_footer.png" alt=""></a>
                         </div>
                     </div>
                     <div class="col-xl-3 col-lg-3 col-md-4 col-sm-5">
@@ -285,42 +304,42 @@
 
     <!-- JS here -->
 
-    <script src="./assets/js/vendor/modernizr-3.5.0.min.js"></script>
+    <script src="../../assets/js/vendor/modernizr-3.5.0.min.js"></script>
     <!-- Jquery, Popper, Bootstrap -->
-    <script src="./assets/js/vendor/jquery-1.12.4.min.js"></script>
-    <script src="./assets/js/popper.min.js"></script>
-    <script src="./assets/js/bootstrap.min.js"></script>
+    <script src="../../assets/js/vendor/jquery-1.12.4.min.js"></script>
+    <script src="../../assets/js/popper.min.js"></script>
+    <script src="../../assets/js/bootstrap.min.js"></script>
     <!-- Jquery Mobile Menu -->
-    <script src="./assets/js/jquery.slicknav.min.js"></script>
+    <script src="../../assets/js/jquery.slicknav.min.js"></script>
 
     <!-- Jquery Slick , Owl-Carousel Plugins -->
-    <script src="./assets/js/owl.carousel.min.js"></script>
-    <script src="./assets/js/slick.min.js"></script>
+    <script src="../../assets/js/owl.carousel.min.js"></script>
+    <script src="../../assets/js/slick.min.js"></script>
     <!-- One Page, Animated-HeadLin -->
-    <script src="./assets/js/wow.min.js"></script>
-    <script src="./assets/js/animated.headline.js"></script>
-    <script src="./assets/js/jquery.magnific-popup.js"></script>
+    <script src="../../assets/js/wow.min.js"></script>
+    <script src="../../assets/js/animated.headline.js"></script>
+    <script src="../../assets/js/jquery.magnific-popup.js"></script>
 
     <!-- Date Picker -->
-    <script src="./assets/js/gijgo.min.js"></script>
+    <script src="../../assets/js/gijgo.min.js"></script>
     <!-- Nice-select, sticky -->
-    <script src="./assets/js/jquery.nice-select.min.js"></script>
-    <script src="./assets/js/jquery.sticky.js"></script>
+    <script src="../../assets/js/jquery.nice-select.min.js"></script>
+    <script src="../../assets/js/jquery.sticky.js"></script>
     
     <!-- counter , waypoint -->
-    <script src="./assets/js/jquery.counterup.min.js"></script>
-    <script src="./assets/js/waypoints.min.js"></script>
-    <script src="./assets/js/jquery.countdown.min.js"></script>
+    <script src="../../assets/js/jquery.counterup.min.js"></script>
+    <script src="../../assets/js/waypoints.min.js"></script>
+    <script src="../../assets/js/jquery.countdown.min.js"></script>
     <!-- contact js -->
-    <script src="./assets/js/contact.js"></script>
-    <script src="./assets/js/jquery.form.js"></script>
-    <script src="./assets/js/jquery.validate.min.js"></script>
-    <script src="./assets/js/mail-script.js"></script>
-    <script src="./assets/js/jquery.ajaxchimp.min.js"></script>
+    <script src="../../assets/js/contact.js"></script>
+    <script src="../../assets/js/jquery.form.js"></script>
+    <script src="../../assets/js/jquery.validate.min.js"></script>
+    <script src="../../assets/js/mail-script.js"></script>
+    <script src="../../assets/js/jquery.ajaxchimp.min.js"></script>
     
-    <!-- Jquery Plugins, main Jquery -->	
-    <script src="./assets/js/plugins.js"></script>
-    <script src="./assets/js/main.js"></script>
+    <!-- Jquery Plugins, main Jquery -->    
+    <script src="../../assets/js/plugins.js"></script>
+    <script src="../../assets/js/main.js"></script>
     
     </body>
 </html>

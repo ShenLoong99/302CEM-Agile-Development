@@ -23,6 +23,9 @@ Route::get('/admin_event', 'App\Http\Controllers\EventListController@event');
 
 Route::get('/registered_event', 'App\Http\Controllers\EventListController@registered_event');
 
+Route::get('/attendees', 'App\Http\Controllers\EventListController@attendees');
+
+
 
 
 
