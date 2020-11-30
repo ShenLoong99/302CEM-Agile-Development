@@ -85,8 +85,10 @@ class EventController extends Controller
         $event->description = $request->get('desc');
         $event->cat = $request->get('cat');
         $event->price = $request->get('price');
-        $event->max_participants = $request->get('max');
-        $event->admin_id = Auth::id();
+		$event->max_participants = $request->get('max');
+		if (!empty($request->get('id'))) { $id = $request->get('id'); } 
+		else { $id = Auth::id(); }
+        $event->admin_id = $id;
         $event->active = 1;
         $event->save(); // save event details to event table
 		$currID = $event->id;
@@ -265,7 +267,7 @@ class EventController extends Controller
 	public function attendees($event_id){
         $reg = Booking_List::where('ev_ID', $event_id)->get();
         $event = Event::where('id', $event_id)->first();
-        $data["sum"] = Booking_List::get()->sum("quantity");
+        $data["sum"] = Booking_List::where('ev_ID', $event_id)->get()->sum("quantity");
         if (!$event) {
         	return view('home');
         }
@@ -288,7 +290,7 @@ class EventController extends Controller
     public function view_event() {
         $events = Event::where('active', 1)->get();
         foreach ($events as $value) {
-            $image = Gallery::where('ev_ID', $value["id"])->where('main', 1)->first();
+			$image = Gallery::where('ev_ID', $value["id"])->where('main', 1)->first();
 			$value["image"] = $image["image"];
         }
 		return view('event', ['event' => $events]);
@@ -305,6 +307,7 @@ class EventController extends Controller
 		$reg = Booking_List::where('mem_ID', $id)->orderBy('updated_at', 'DESC')->get();
 		foreach ($reg as $value) {
 			$event = Event::where('id', $value["ev_ID"])->first();
+			$value["id"] = $event['id'];
 			$value["ev_name"] = $event["ev_name"];
 			$value["description"] = $event["description"];
 			$value["date_time_start"] = $event["date_time_start"];

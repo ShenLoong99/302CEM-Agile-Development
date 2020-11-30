@@ -19,6 +19,7 @@ class InsertEventTest extends TestCase
     //         ['name' => 'Testing Event', 
     //         'desc' => 'This is description', 
     //         'cat' => 3, 
+    //         'id' => 1,
     //         'venue' => 'Tesco Penang', 
     //         'start' => date('Y-m-d H:i:s'), 
     //         'end' => date('Y-m-d H:i:s', strtotime('+1 day', time())), 

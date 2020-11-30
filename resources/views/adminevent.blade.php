@@ -39,7 +39,7 @@
                                         <ul id="navigation">
                                             <li><a href={{ url('/') }}>Home</a></li>
                                             <li><a href={{ url('/view_event') }}>Events</a></li>
-                                            <li><a href="spakers.html">Speakers</a></li>
+                                            <li><a href={{ url('/registered_event') }}>My Events</a></li>
                                             <li><a href="schedule.html">Schedule</a></li>
                                             <li><a href="blog.html">Blog</a>
                                                 <ul class="submenu">
@@ -127,6 +127,9 @@
                         <th>Price (RM)</th>
                         <th>Action</th>
                     </tr>
+                    @php 
+                        $a = 0;
+                    @endphp
                     @foreach($events as $row)
                     <tr>
                         <td>{{$row['id']}}</td>
@@ -139,7 +142,15 @@
                             <a href={{ url('attendees/'. $row['id']) }} class="btn">Attendees</a>
                         </td>
                     </tr>
+                        @php 
+                            $a++;
+                        @endphp
                     @endforeach
+                    @if ($a == 0) 
+                        <tr>
+                            <th colspan="6" class="text-center">No event is hosted by you yet... :(</th>
+                        </tr>
+                    @endif
                 </table>
             </div>
         </div>

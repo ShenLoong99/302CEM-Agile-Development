@@ -96,7 +96,7 @@
     </header>
     <main>
         <!--? slider Area Start-->
-        <div class="slider-area position-relative" style="background-image: url(https://images.unsplash.com/photo-1510673398445-94f476ef2cbc?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&w=1000&q=80)">
+        <div class="slider-area position-relative" style="background-image: url(https://assets.nst.com.my/images/articles/Penang_Bridge-2911_field_image_socialmedia.var_1511949332.jpg)">
             <div class="slider-active">
                 <!-- Single Slider -->
                 <div class="single-slider slider-height d-flex align-items-center">
