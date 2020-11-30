@@ -127,7 +127,7 @@
                             <div class="col-md-6">
                                 <select id="role" name="role" class="form-control @error('role') is-invalid @enderror" autofocus>
                                   <option value=0>Member</option>
-                                  <option value=1>Event Hoster</option>
+                                  <option value=1>Event Host</option>
                                 </select>
                             </div>
                           @error('role')

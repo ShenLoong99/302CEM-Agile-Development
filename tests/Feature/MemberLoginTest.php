@@ -18,14 +18,11 @@ class MemberLoginTest extends TestCase
     {
         $response = $this->json('POST', 
             '/login', 
-            ['email' => 'ifcchin@gmail.com',
-            'password' => 'P@$$vv0rD',
+            ['email' => 'sikai@gmail.com',
+            'password' => '12345678',
             '_token' => csrf_token()]
         );
-
         $response->assertStatus(204);
-
-
     }
 }
 

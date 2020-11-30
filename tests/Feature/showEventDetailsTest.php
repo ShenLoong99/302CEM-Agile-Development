@@ -16,6 +16,15 @@ class ShowEventDetailsTest extends TestCase
     //     $response = $this->delete('/eventdetails/3');
     //     $response->assertStatus(200);
     // }
+
+    // public function test_book_event() {
+    //     $response = $this->json('POST', 
+    //         'eventdetails/6', [ 
+    //         'id' => 2, 
+    //         'qty' => 5 
+    //     ]);
+    //     $response->assertStatus(200);
+    // }
 }
 
 ?>
