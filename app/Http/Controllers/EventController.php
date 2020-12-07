@@ -260,7 +260,7 @@ class EventController extends Controller
 		$reg = Booking_List::where('ev_ID', $event_id);
 		$reg->delete();
 
-		return redirect('/adminevent');
+		return redirect('/admin_event');
 		//return true; // for testing 
 	}
 

@@ -113,7 +113,7 @@
     <!--? About Law Start-->
     @guest
     @elseif (Auth::user()->role > 0)
-        <form action="/e/eventdetails/{{$event -> id}}" class="float-right mr-5" method="POST">
+        <form class="float-right mr-5" method="POST">
             @if ($event->admin_id == Auth::user()->id)
                 <a href="/edit/{{$event->id}}" class="btn my-3">Edit Event</a>
             @endif
